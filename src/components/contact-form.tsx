@@ -43,10 +43,8 @@ export function ContactForm() {
             access_key: accessKey,
             name: formData.get("name"),
             email: formData.get("email"),
-            showName: formData.get("showName"),
-            website: formData.get("website"),
             message: formData.get("message"),
-            subject: "New interview request from natemhanson.com",
+            subject: "New message from natemhanson.com",
             from_name: "natemhanson.com",
             replyto: formData.get("email"),
             botcheck: formData.get("botcheck"),
@@ -96,19 +94,8 @@ export function ContactForm() {
         </label>
       </div>
 
-      <div className={styles.row}>
-        <label className={styles.field}>
-          <span>Podcast or publication</span>
-          <input name="showName" type="text" required />
-        </label>
-        <label className={styles.field}>
-          <span>Website</span>
-          <input name="website" type="url" placeholder="https://..." />
-        </label>
-      </div>
-
       <label className={styles.field}>
-        <span>What are you inviting Nate to talk about?</span>
+        <span>Message</span>
         <textarea name="message" rows={7} required />
       </label>
 
@@ -116,7 +103,7 @@ export function ContactForm() {
 
       <div className={styles.actions}>
         <button type="submit" disabled={isPending}>
-          {isPending ? "Sending..." : "Send Interview Request"}
+          {isPending ? "Sending..." : "Send Message"}
         </button>
         {state.error ? <p className={styles.error}>{state.error}</p> : null}
         {state.success ? <p className={styles.success}>{state.success}</p> : null}

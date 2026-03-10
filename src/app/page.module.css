@@ -1,124 +1,52 @@
 .page {
-  width: min(1180px, calc(100vw - 32px));
+  width: min(980px, calc(100vw - 40px));
   margin: 0 auto;
-  padding: 28px 0 64px;
+  padding: 44px 0 72px;
 }
 
-.hero,
-.storySection,
-.credSection,
-.workSection,
-.topicSection,
+.header,
+.about,
+.section,
 .contactSection {
-  margin-bottom: 20px;
-}
-
-.hero {
-  padding: 0;
+  margin-bottom: 40px;
 }
 
 .topbar {
   display: flex;
   justify-content: flex-start;
-  align-items: baseline;
-  gap: 28px;
-  margin-bottom: 22px;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 28px;
 }
 
 .wordmark {
-  font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--foreground);
+  font-size: 0.98rem;
   font-weight: 700;
 }
 
 .nav {
   display: flex;
-  gap: 16px;
+  gap: 18px;
 }
 
 .nav a,
-.contactIntro a {
+.about a,
+.contactCopy a {
   color: var(--link);
   text-decoration: none;
-  text-underline-offset: 0.14em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
 }
 
-.headerBlock {
+.intro {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 146px minmax(0, 1fr);
+  gap: 22px;
   align-items: start;
 }
 
-.heroCopy h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(3rem, 8vw, 5.4rem);
-  font-weight: 600;
-  line-height: 0.98;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.heroSubhead,
-.credCard p,
-.workCard p,
-.contactIntro p {
-  font-size: 1.15rem;
-  line-height: 1.55;
-  color: var(--foreground);
-}
-
-.heroSubhead {
-  max-width: 34ch;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.primaryAction,
-.secondaryAction,
-.workCard a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 16px;
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.primaryAction {
-  background: var(--link);
-  color: #3b3550;
-}
-
-.secondaryAction,
-.workCard a {
-  background: rgba(255, 255, 255, 0.08);
-}
-
 .portraitWrap {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.portraitFrame {
-  width: 200px;
-  padding: 0;
-  border-radius: 14px;
+  width: 146px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
 }
 
 .portrait {
@@ -127,174 +55,104 @@
   height: auto;
 }
 
-.storySection,
-.credSection,
-.workSection,
-.topicSection,
-.contactSection {
-  padding: 0;
+.titleBlock h1 {
+  font-size: clamp(3rem, 8vw, 4.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
 }
 
-.sectionIntro {
+.titleBlock p {
+  max-width: 28ch;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.about {
   display: grid;
-  gap: 10px;
-  margin-bottom: 18px;
+  gap: 28px;
 }
 
-.sectionIntro h2,
-.contactIntro h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  max-width: 14ch;
+.about p {
+  max-width: 21ch;
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 }
 
 .sectionLabel {
+  margin-bottom: 14px;
   color: var(--link);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
 }
 
-.longform {
-  display: grid;
-  gap: 30px;
-}
-
-.longform p {
-  max-width: 32ch;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 4.7vw, 3.55rem);
-  line-height: 1.18;
-  letter-spacing: -0.03em;
-}
-
-.longform a {
-  color: var(--link);
-}
-
-.credCard,
-.workCard {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-}
-
-.credGrid,
 .workGrid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
-.credGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.credCard {
-  padding: 22px;
-}
-
-.credNumber {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: var(--link);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-}
-
-.workGrid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .workCard {
-  display: grid;
-  gap: 12px;
-  padding: 22px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.workCard h3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.55rem;
-  line-height: 1.2;
+.workCard h2 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.workCard p,
+.contactCopy p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--muted);
 }
 
 .workCard a {
-  width: fit-content;
-  color: var(--foreground);
-}
-
-.topicWrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.topicChip {
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.98rem;
+  display: inline-block;
+  margin-top: 12px;
   color: var(--foreground);
 }
 
 .contactSection {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+  grid-template-columns: minmax(0, 0.75fr) minmax(340px, 1fr);
   gap: 24px;
   align-items: start;
 }
 
-.contactIntro {
+.contactCopy {
   display: grid;
   gap: 12px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav a:hover,
-  .contactIntro a:hover,
-  .longform a:hover {
-    opacity: 0.8;
-  }
-
-  .primaryAction:hover {
-    background: #d2e148;
-  }
-
-  .secondaryAction:hover,
+  .about a:hover,
+  .contactCopy a:hover,
   .workCard a:hover {
-    background: rgba(255, 255, 255, 0.16);
+    opacity: 0.8;
   }
 }
 
 @media (max-width: 900px) {
-  .headerBlock,
-  .credGrid,
   .workGrid,
   .contactSection {
     grid-template-columns: 1fr;
-  }
-
-  .portraitWrap {
-    justify-content: flex-start;
-  }
-
-  .portraitFrame {
-    width: 180px;
   }
 }
 
 @media (max-width: 640px) {
   .page {
-    width: min(100vw - 24px, 1180px);
-    padding-top: 20px;
+    width: min(100vw - 24px, 980px);
+    padding-top: 28px;
   }
 
   .topbar {
@@ -307,7 +165,16 @@
     flex-wrap: wrap;
   }
 
-  .longform p {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .portraitWrap {
+    width: 132px;
+  }
+
+  .about p {
     max-width: none;
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
   }
 }
