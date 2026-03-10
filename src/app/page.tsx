@@ -67,7 +67,10 @@ export default function Home() {
 
           <div className={styles.titleBlock}>
             <h1>Nate Hanson</h1>
-            <p>Co-host of Faith Lab. Founder of FaithPods.</p>
+            <p>
+              <span>Co-host of Faith Lab.</span>
+              <span>Founder of FaithPods.</span>
+            </p>
           </div>
         </div>
       </header>
