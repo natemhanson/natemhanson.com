@@ -1,7 +1,7 @@
 .page {
-  width: min(920px, calc(100vw - 32px));
+  width: min(1180px, calc(100vw - 32px));
   margin: 0 auto;
-  padding: 20px 0 56px;
+  padding: 28px 0 64px;
 }
 
 .hero,
@@ -10,93 +10,77 @@
 .workSection,
 .topicSection,
 .contactSection {
-  margin-bottom: 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
+  margin-bottom: 20px;
 }
 
 .hero {
-  padding: 20px;
+  padding: 0;
 }
 
 .topbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 28px;
+  margin-bottom: 22px;
 }
 
 .wordmark {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 0.04em;
-  color: var(--muted);
+  color: var(--foreground);
+  font-weight: 700;
 }
 
 .nav {
   display: flex;
-  gap: 18px;
+  gap: 16px;
 }
 
 .nav a,
 .contactIntro a {
-  color: var(--foreground);
-  text-decoration: underline;
+  color: var(--link);
+  text-decoration: none;
   text-underline-offset: 0.14em;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.heroGrid {
+.headerBlock {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
-  gap: 24px;
-  align-items: end;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
 }
 
-.eyebrow,
-.sectionLabel {
-  margin-bottom: 10px;
-  color: var(--accent);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.heroCopy h1 {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.heroCopy h1,
-.sectionIntro h2,
-.contactIntro h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-size: clamp(3rem, 8vw, 5.4rem);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 0.98;
   letter-spacing: -0.02em;
-  max-width: 14ch;
+  margin-bottom: 12px;
 }
 
-.lead,
-.storyCard p,
+.heroSubhead,
 .credCard p,
 .workCard p,
 .contactIntro p {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--foreground);
 }
 
-.lead {
-  max-width: 58ch;
-  margin-top: 16px;
+.heroSubhead {
+  max-width: 34ch;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .primaryAction,
@@ -105,42 +89,42 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
-  padding: 0 14px;
+  min-height: 42px;
+  padding: 0 16px;
   border-radius: 999px;
-  border: 1px solid var(--border-strong);
+  border: 2px solid rgba(255, 255, 255, 0.16);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .primaryAction {
-  background: var(--foreground);
-  color: #fffdf8;
+  background: var(--link);
+  color: #3b3550;
 }
 
 .secondaryAction,
 .workCard a {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .portraitWrap {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .portraitFrame {
-  width: min(100%, 280px);
-  padding: 8px;
-  border-radius: 10px;
-  background: #efebe4;
-  border: 1px solid var(--border);
+  width: 200px;
+  padding: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
 }
 
 .portrait {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 6px;
 }
 
 .storySection,
@@ -148,60 +132,62 @@
 .workSection,
 .topicSection,
 .contactSection {
-  padding: 20px;
+  padding: 0;
 }
 
 .sectionIntro {
   display: grid;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .sectionIntro h2,
 .contactIntro h2 {
-  font-size: clamp(1.6rem, 3vw, 2.25rem);
-  max-width: 18ch;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
 }
 
-.storyGrid {
+.sectionLabel {
+  color: var(--link);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.longform {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
-  gap: 14px;
+  gap: 30px;
 }
 
-.storyCard,
-.quoteCard,
+.longform p {
+  max-width: 32ch;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 4.7vw, 3.55rem);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.longform a {
+  color: var(--link);
+}
+
 .credCard,
 .workCard {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #fffdf8;
-}
-
-.storyCard {
-  display: grid;
-  gap: 14px;
-  padding: 18px;
-}
-
-.quoteCard {
-  display: flex;
-  align-items: end;
-  min-height: 100%;
-  padding: 18px;
-  background: #f3eee6;
-}
-
-.quoteCard p {
-  font-size: 1.25rem;
-  line-height: 1.3;
-  color: var(--foreground);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
 }
 
 .credGrid,
 .workGrid {
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
 .credGrid {
@@ -209,16 +195,17 @@
 }
 
 .credCard {
-  padding: 18px;
+  padding: 22px;
 }
 
 .credNumber {
   display: inline-block;
   margin-bottom: 12px;
-  color: var(--accent);
+  color: var(--link);
   font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 .workGrid {
@@ -228,60 +215,67 @@
 .workCard {
   display: grid;
   gap: 12px;
-  padding: 18px;
+  padding: 22px;
 }
 
 .workCard h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   line-height: 1.2;
 }
 
 .workCard a {
   width: fit-content;
+  color: var(--foreground);
 }
 
 .topicWrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .topicChip {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fffdf8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.98rem;
+  color: var(--foreground);
 }
 
 .contactSection {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+  gap: 24px;
   align-items: start;
 }
 
 .contactIntro {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .nav a:hover,
+  .contactIntro a:hover,
+  .longform a:hover {
+    opacity: 0.8;
+  }
+
   .primaryAction:hover {
-    background: #333;
+    background: #d2e148;
   }
 
   .secondaryAction:hover,
   .workCard a:hover {
-    background: #f5f1ea;
+    background: rgba(255, 255, 255, 0.16);
   }
 }
 
 @media (max-width: 900px) {
-  .heroGrid,
-  .storyGrid,
+  .headerBlock,
   .credGrid,
   .workGrid,
   .contactSection {
@@ -291,37 +285,29 @@
   .portraitWrap {
     justify-content: flex-start;
   }
+
+  .portraitFrame {
+    width: 180px;
+  }
 }
 
 @media (max-width: 640px) {
   .page {
-    width: min(100vw - 20px, 1080px);
-    padding-top: 10px;
-  }
-
-  .hero,
-  .storySection,
-  .credSection,
-  .workSection,
-  .topicSection,
-  .contactSection {
-    padding: 16px;
-    border-radius: 10px;
+    width: min(100vw - 24px, 1180px);
+    padding-top: 20px;
   }
 
   .topbar {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 24px;
+    gap: 10px;
   }
 
   .nav {
     flex-wrap: wrap;
   }
 
-  .heroCopy h1,
-  .sectionIntro h2,
-  .contactIntro h2 {
+  .longform p {
     max-width: none;
   }
 }

@@ -15,6 +15,27 @@ const topics = [
   "What makes a message actually resonate",
 ];
 
+const paragraphs = [
+  <>
+    I host <a href="https://faithlabshow.com" target="_blank" rel="noreferrer">Faith Lab</a>, a
+    show with Shelby that brings serious biblical scholarship out of academic
+    settings and into conversations everyday people can actually follow.
+  </>,
+  <>
+    Before that, I spent years in ministry, then walked through a long season
+    of deconstruction, and eventually found myself drawn back into the
+    historical, textual, and philosophical foundations of Christianity. That
+    path led to <a href="https://almostheretical.com" target="_blank" rel="noreferrer">Almost
+    Heretical</a>, more than 2 million downloads, and a lot of conversations
+    with people trying to figure out what holds up when easy answers do not.
+  </>,
+  <>
+    I also built <a href="https://faithpods.com" target="_blank" rel="noreferrer">FaithPods</a>{" "}
+    because Christian podcasters deserve better tools, better strategy, and a
+    stronger sense that they are not building alone.
+  </>,
+];
+
 const work = [
   {
     name: "Faith Lab",
@@ -45,16 +66,26 @@ export default function Home() {
           </nav>
         </div>
 
-        <div className={styles.heroGrid}>
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Host. Producer. Builder.</p>
-            <h1>Faith, media, and the kind of conversations that hold up under pressure.</h1>
-            <p className={styles.lead}>
-              I make shows, build tools for podcasters, and care a lot about
-              helping serious ideas land with ordinary people. If you want to
-              book me for an interview, this site is built for that.
-            </p>
+        <div className={styles.headerBlock}>
+          <div className={styles.portraitWrap}>
+            <div className={styles.portraitFrame}>
+              <Image
+                src="/nate.jpg"
+                alt="Nate Hanson"
+                width={2699}
+                height={2699}
+                priority
+                className={styles.portrait}
+              />
+            </div>
+          </div>
 
+          <div className={styles.heroCopy}>
+            <h1>Nate Hanson</h1>
+            <p className={styles.heroSubhead}>
+              Faith Lab. FaithPods. Interviews about faith, scholarship, media,
+              and building things that matter.
+            </p>
             <div className={styles.actions}>
               <a className={styles.primaryAction} href="#book">
                 Book Nate for an Interview
@@ -69,58 +100,21 @@ export default function Home() {
               </a>
             </div>
           </div>
-
-          <div className={styles.portraitWrap}>
-            <div className={styles.portraitFrame}>
-              <Image
-                src="/nateblue.jpg"
-                alt="Nate Hanson"
-                width={1280}
-                height={1265}
-                priority
-                className={styles.portrait}
-              />
-            </div>
-          </div>
         </div>
       </section>
 
       <section id="about" className={styles.storySection}>
-        <div className={styles.sectionIntro}>
-          <p className={styles.sectionLabel}>About</p>
-          <h2>A clearer picture of what I actually do.</h2>
-        </div>
-
-        <div className={styles.storyGrid}>
-          <article className={styles.storyCard}>
-            <p>
-              I spent more than a decade in ministry, including years serving as
-              a pastor and church planter alongside Francis Chan. After a long
-              season of deconstruction, I started asking whether Christianity
-              could stand up to real scrutiny instead of inherited certainty.
-            </p>
-            <p>
-              That search led first to <strong>Almost Heretical</strong>, then
-              deeper into the historical, textual, and philosophical foundations
-              of the Christian story, and eventually to <strong>Faith Lab</strong>.
-              What I care about now is translating serious scholarship into
-              conversations people can actually follow.
-            </p>
-          </article>
-
-          <aside className={styles.quoteCard}>
-            <p>
-              Faith is not pretending to believe what you know is not true. It
-              is being willing to put truth under the microscope.
-            </p>
-          </aside>
+        <div className={styles.longform}>
+          {paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
       </section>
 
       <section className={styles.credSection}>
         <div className={styles.sectionIntro}>
-          <p className={styles.sectionLabel}>Background</p>
-          <h2>The short version of why people invite me on.</h2>
+          <p className={styles.sectionLabel}>Why Me</p>
+          <h2>The short case for bringing me onto your show.</h2>
         </div>
 
         <div className={styles.credGrid}>
