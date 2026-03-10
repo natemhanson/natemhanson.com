@@ -4,32 +4,32 @@ import styles from "./page.module.css";
 
 const paragraphs = [
   <>
-    I host{" "}
+    I was a church planter and worship leader who lost his faith, started a
+    podcast to talk about it, and watched that show grow to more than 2
+    million downloads as people wrestled with the same questions alongside me.
+  </>,
+  <>
+    The long process of deconstruction and examining the case for what
+    happened in Jerusalem 2,000 years ago eventually led me back to Jesus in a
+    way that felt grounded, factual, historical, and reasoned. That story is
+    part of why{" "}
+    <a href="https://almostheretical.com" target="_blank" rel="noreferrer">
+      Almost Heretical
+    </a>{" "}
+    mattered to so many people.
+  </>,
+  <>
+    I eventually shifted the show into{" "}
     <a href="https://faithlabshow.com" target="_blank" rel="noreferrer">
       Faith Lab
     </a>
-    , a show with Shelby that brings serious biblical scholarship out of
-    academic settings and into conversations everyday people can actually
-    follow.
-  </>,
-  <>
-    Before that, I spent years in ministry, then walked through a long season
-    of deconstruction, and eventually found myself drawn back into the
-    historical, textual, and philosophical foundations of Christianity. That
-    path led to{" "}
-    <a href="https://almostheretical.com" target="_blank" rel="noreferrer">
-      Almost Heretical
-    </a>
-    , more than 2 million downloads, and a lot of conversations with people
-    trying to figure out what holds up when easy answers do not.
-  </>,
-  <>
-    I also built{" "}
+    , where Shelby and I bring on Christian scholars, academics, and
+    archaeologists to help people understand the strength of the Christian
+    story. I also built{" "}
     <a href="https://faithpods.com" target="_blank" rel="noreferrer">
       FaithPods
-    </a>{" "}
-    because Christian podcasters deserve better tools, better strategy, and a
-    stronger sense that they are not building alone.
+    </a>
+    .
   </>,
 ];
 
@@ -37,7 +37,7 @@ const work = [
   {
     name: "Faith Lab",
     description:
-      "A podcast with Nate and Shelby Hanson about serious scholarship, real questions, and the Christian story.",
+      "A podcast with Nate and Shelby Hanson bringing top Christian scholars, academics, and archaeologists into clear public conversation.",
     href: "https://faithlabshow.com",
     cta: "Visit Faith Lab",
   },
@@ -78,8 +78,8 @@ export default function Home() {
           <div className={styles.titleBlock}>
             <h1>Nate Hanson</h1>
             <p>
-              Faith Lab, FaithPods, and work around faith, scholarship, media,
-              and meaningful conversations.
+              Faith Lab, FaithPods, and work around faith, scholarship,
+              Christian media, and meaningful conversation.
             </p>
           </div>
         </div>
