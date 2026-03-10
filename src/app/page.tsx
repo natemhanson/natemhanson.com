@@ -26,9 +26,9 @@ const paragraphs = [
     story. I also built{" "}
     <a href="https://faithpods.com" target="_blank" rel="noreferrer">
       FaithPods
-    </a>
-    .com to help other Christian podcasters connect with more people and grow
-    their shows.
+    </a>{" "}
+    to help other Christian podcasters connect with more people and grow their
+    shows.
   </>,
 ];
 
