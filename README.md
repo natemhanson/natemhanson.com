@@ -18,16 +18,16 @@ npm run build
 
 ## Contact form setup
 
-Set these environment variables in Vercel:
+This form uses [Web3Forms](https://web3forms.com/), which is much simpler than running your own mail sender if you just want messages delivered to Gmail.
+
+1. Create a Web3Forms access key tied to `natemhanson@gmail.com`.
+2. Add this environment variable in Vercel:
 
 ```bash
-RESEND_API_KEY=
-CONTACT_TO_EMAIL=
-CONTACT_FROM_EMAIL=
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=
 ```
 
-`CONTACT_TO_EMAIL` is the private inbox that should receive form submissions.
-`CONTACT_FROM_EMAIL` should be an address on a verified sending domain in Resend.
+That is enough for the form to work. No verified sending domain is required.
 
 ## Deployment
 

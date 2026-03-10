@@ -14,6 +14,7 @@ const initialState: FormState = {
 };
 
 export function ContactForm() {
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
   const [state, setState] = useState<FormState>(initialState);
   const [isPending, startTransition] = useTransition();
 
@@ -25,16 +26,30 @@ export function ContactForm() {
 
     setState(initialState);
 
+    if (!accessKey) {
+      setState({
+        error:
+          "Form is not configured yet. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel or use X instead.",
+        success: null,
+      });
+      return;
+    }
+
     startTransition(async () => {
       try {
-        const response = await fetch("/api/contact", {
+        const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: JSON.stringify({
+            access_key: accessKey,
             name: formData.get("name"),
             email: formData.get("email"),
             showName: formData.get("showName"),
             website: formData.get("website"),
             message: formData.get("message"),
+            subject: "New interview request from natemhanson.com",
+            from_name: "natemhanson.com",
+            replyto: formData.get("email"),
+            botcheck: formData.get("botcheck"),
           }),
           headers: {
             "Content-Type": "application/json",
@@ -96,6 +111,8 @@ export function ContactForm() {
         <span>What are you inviting Nate to talk about?</span>
         <textarea name="message" rows={7} required />
       </label>
+
+      <input className={styles.botcheck} name="botcheck" type="checkbox" tabIndex={-1} autoComplete="off" />
 
       <div className={styles.actions}>
         <button type="submit" disabled={isPending}>
