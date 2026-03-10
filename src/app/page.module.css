@@ -1,40 +1,38 @@
 .page {
-  width: min(1180px, calc(100vw - 40px));
+  width: min(1080px, calc(100vw - 32px));
   margin: 0 auto;
-  padding: 28px 0 72px;
+  padding: 24px 0 72px;
 }
 
 .hero,
-.proofSection,
+.storySection,
+.credSection,
 .workSection,
 .topicSection,
 .contactSection {
-  position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   border: 1px solid var(--border);
-  border-radius: 32px;
-  background: var(--surface);
-  backdrop-filter: blur(18px);
-  overflow: hidden;
+  border-radius: 24px;
+  background: var(--card);
 }
 
 .hero {
-  padding: 28px;
+  padding: 24px;
 }
 
-.navRow {
+.topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 52px;
+  gap: 16px;
+  margin-bottom: 36px;
 }
 
-.kicker {
-  text-transform: uppercase;
+.wordmark {
+  font-size: 0.9rem;
   letter-spacing: 0.18em;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .nav {
@@ -42,58 +40,62 @@
   gap: 18px;
 }
 
-.nav a {
-  font-size: 0.95rem;
-  color: var(--ink-soft);
+.nav a,
+.contactIntro a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 160ms ease;
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-  gap: 32px;
-  align-items: center;
-}
-
-.heroCopy {
-  max-width: 680px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 28px;
+  align-items: end;
 }
 
 .eyebrow,
 .sectionLabel {
   margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.78rem;
   color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .heroCopy h1,
-.sectionHeader h2,
-.contactSection h2 {
+.sectionIntro h2,
+.contactIntro h2 {
   font-family: var(--font-cormorant), serif;
+  font-size: clamp(3rem, 6.8vw, 6.4rem);
   font-weight: 600;
   line-height: 0.95;
   letter-spacing: -0.04em;
+  max-width: 10.5ch;
 }
 
-.heroCopy h1 {
-  font-size: clamp(3.6rem, 9vw, 7.6rem);
-  max-width: 10ch;
+.lead,
+.storyCard p,
+.credCard p,
+.workCard p,
+.contactIntro p {
+  font-size: 1.06rem;
+  line-height: 1.75;
+  color: var(--muted);
 }
 
 .lead {
   max-width: 52ch;
-  margin-top: 24px;
-  font-size: 1.2rem;
-  line-height: 1.65;
-  color: var(--ink-soft);
+  margin-top: 22px;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .primaryAction,
@@ -102,234 +104,224 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  border-radius: 999px;
+  min-height: 46px;
   padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
   transition:
-    transform 160ms ease,
     background-color 160ms ease,
     color 160ms ease,
-    border-color 160ms ease;
+    transform 160ms ease;
 }
 
 .primaryAction {
-  background: #171717;
-  color: #f9f2e8;
+  background: var(--foreground);
+  color: #fffdf8;
 }
 
 .secondaryAction,
 .workCard a {
-  border: 1px solid var(--border);
-  color: #171717;
+  background: transparent;
 }
 
 .portraitWrap {
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.portraitCard {
-  position: relative;
-  padding: 18px;
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(17, 17, 17, 0.92), rgba(74, 55, 31, 0.68));
-}
-
-.portraitCard::after {
-  content: "";
-  position: absolute;
-  inset: auto 22px 16px;
-  height: 18px;
-  border-radius: 999px;
-  filter: blur(18px);
-  background: rgba(23, 23, 23, 0.28);
+.portraitFrame {
+  width: min(100%, 360px);
+  padding: 12px;
+  border-radius: 22px;
+  background: #d9d2c6;
 }
 
 .portrait {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 20px;
-  object-fit: cover;
+  border-radius: 16px;
 }
 
-.proofSection,
+.storySection,
+.credSection,
 .workSection,
 .topicSection,
 .contactSection {
-  padding: 28px;
+  padding: 24px;
 }
 
-.sectionHeader {
+.sectionIntro {
   display: grid;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
-.sectionHeader h2,
-.contactSection h2 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  max-width: 11.5ch;
+.sectionIntro h2,
+.contactIntro h2 {
+  font-size: clamp(2.35rem, 5vw, 4.4rem);
+  max-width: 11ch;
 }
 
-.proofGrid,
-.workGrid {
+.storyGrid {
   display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
   gap: 18px;
 }
 
-.proofGrid {
+.storyCard,
+.quoteCard,
+.credCard,
+.workCard {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #fffdf8;
+}
+
+.storyCard {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+}
+
+.quoteCard {
+  display: flex;
+  align-items: end;
+  min-height: 100%;
+  padding: 22px;
+  background: #1b1b1b;
+}
+
+.quoteCard p {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #fff7ef;
+}
+
+.credGrid,
+.workGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.credGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.proofCard,
-.workCard,
-.topicPanel,
-.contactCard {
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  background: rgba(255, 252, 247, 0.78);
-}
-
-.proofCard {
+.credCard {
   padding: 20px;
 }
 
-.proofIndex {
+.credNumber {
   display: inline-block;
-  margin-bottom: 26px;
-  font-size: 0.85rem;
+  margin-bottom: 20px;
   color: var(--accent);
-}
-
-.proofCard p,
-.workCard p,
-.topicBody,
-.contactCard p {
-  font-size: 1.03rem;
-  line-height: 1.7;
-  color: var(--ink-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
 }
 
 .workGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .workCard {
   display: grid;
-  gap: 16px;
+  gap: 14px;
   padding: 22px;
 }
 
 .workCard h3 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+  line-height: 1.1;
 }
 
 .workCard a {
   width: fit-content;
 }
 
-.topicPanel {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
-  gap: 24px;
-  padding: 24px;
-}
-
-.topicList {
+.topicWrap {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
 .topicChip {
-  display: inline-flex;
-  align-items: center;
+  padding: 11px 15px;
   border-radius: 999px;
-  padding: 10px 16px;
-  background: rgba(187, 77, 32, 0.08);
-  color: #65321e;
+  border: 1px solid var(--border);
+  background: #fffdf8;
 }
 
 .contactSection {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.92fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
+  gap: 22px;
   align-items: start;
 }
 
-.contactCard {
+.contactIntro {
   display: grid;
-  gap: 22px;
-  padding: 24px;
-}
-
-.contactCard a {
-  color: #171717;
-}
-
-.contactLinks {
-  display: flex;
-  gap: 16px;
-  padding-top: 8px;
+  gap: 12px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav a:hover,
-  .contactCard a:hover {
-    color: var(--accent);
+  .contactIntro a:hover {
+    text-decoration-color: currentColor;
   }
 
   .primaryAction:hover,
   .secondaryAction:hover,
   .workCard a:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
   .primaryAction:hover {
-    background: #2d2d2d;
+    background: #2a2a2a;
   }
 
   .secondaryAction:hover,
   .workCard a:hover {
-    background: rgba(187, 77, 32, 0.07);
-    border-color: rgba(187, 77, 32, 0.24);
+    background: #f2ede3;
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .heroGrid,
-  .topicPanel,
-  .contactSection,
-  .proofGrid,
-  .workGrid {
+  .storyGrid,
+  .credGrid,
+  .workGrid,
+  .contactSection {
     grid-template-columns: 1fr;
   }
 
-  .heroCopy h1 {
-    max-width: 12ch;
+  .portraitWrap {
+    justify-content: flex-start;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .page {
-    width: min(100vw - 24px, 1180px);
-    padding-top: 12px;
+    width: min(100vw - 20px, 1080px);
+    padding-top: 10px;
   }
 
   .hero,
-  .proofSection,
+  .storySection,
+  .credSection,
   .workSection,
   .topicSection,
   .contactSection {
-    border-radius: 24px;
-    padding: 20px;
+    padding: 18px;
+    border-radius: 18px;
   }
 
-  .navRow {
+  .topbar {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .nav {
@@ -337,16 +329,8 @@
   }
 
   .heroCopy h1,
-  .sectionHeader h2,
-  .contactSection h2 {
+  .sectionIntro h2,
+  .contactIntro h2 {
     max-width: none;
-  }
-
-  .lead,
-  .proofCard p,
-  .workCard p,
-  .topicBody,
-  .contactCard p {
-    font-size: 1rem;
   }
 }

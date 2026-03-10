@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Nate Hanson",
   description:
-    "Personal site for Nate Hanson: podcast host, growth strategist, and builder working at the intersection of ideas, media, and meaningful work.",
+    "Nate Hanson is the host of Faith Lab and the builder behind FaithPods. Book interviews, explore current work, and get in touch without exposing a personal email.",
 };
 
 export default function RootLayout({
