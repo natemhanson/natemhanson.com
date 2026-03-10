@@ -1,47 +1,54 @@
 .form {
   display: grid;
-  gap: 18px;
-  padding: 22px;
-  border: 1px solid rgba(242, 240, 236, 0.14);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.05);
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
 
 .field {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .field span {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 
 .field input,
 .field textarea {
   width: 100%;
-  border: 1px solid rgba(242, 240, 236, 0.18);
-  border-radius: 12px;
-  background: rgba(18, 14, 28, 0.18);
-  padding: 14px 15px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+  padding: 13px 14px;
   color: var(--foreground);
   font: inherit;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: rgba(242, 240, 236, 0.38);
+  color: var(--border-strong);
 }
 
 .field textarea {
   resize: vertical;
-  min-height: 180px;
+  min-height: 160px;
 }
 
 .botcheck {
@@ -50,10 +57,9 @@
 
 .field input:focus,
 .field textarea:focus {
-  outline: 2px solid rgba(181, 197, 61, 0.18);
-  outline-offset: 1px;
-  border-color: rgba(181, 197, 61, 0.55);
-  background: rgba(18, 14, 28, 0.28);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(184, 83, 62, 0.1);
 }
 
 .actions {
@@ -63,37 +69,53 @@
 
 .actions button {
   width: fit-content;
-  min-height: 42px;
-  padding: 0 18px;
+  min-height: 44px;
+  padding: 0 24px;
   border: 0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--foreground);
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
   font: inherit;
-  cursor: pointer;
+  font-size: 0.9rem;
   font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.actions button:hover {
+  background: var(--accent-hover);
+}
+
+.actions button:active {
+  transform: scale(0.98);
 }
 
 .actions button:disabled {
-  opacity: 0.7;
+  opacity: 0.65;
   cursor: wait;
 }
 
 .error,
 .success {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .error {
-  color: #ffd7cf;
+  color: #c53030;
 }
 
 .success {
-  color: #d7f0a8;
+  color: #2f855a;
 }
 
 @media (max-width: 640px) {
   .row {
     grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 20px;
   }
 }

@@ -1,12 +1,13 @@
 :root {
-  --background: #625675;
-  --foreground: #f2f0ec;
-  --muted: rgba(242, 240, 236, 0.8);
-  --card: transparent;
-  --border: rgba(242, 240, 236, 0.14);
-  --border-strong: rgba(242, 240, 236, 0.28);
-  --accent: #f2f0ec;
-  --link: #b5c53d;
+  --background: #faf7f2;
+  --foreground: #1c1917;
+  --muted: #7c7670;
+  --accent: #b8533e;
+  --accent-hover: #a34835;
+  --card: #f0ebe3;
+  --border: #e2ddd5;
+  --border-strong: #c8c2b8;
+  --link: #b8533e;
 }
 
 html,
@@ -19,10 +20,12 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  background-image:
-    radial-gradient(circle at top left, rgba(150, 126, 190, 0.35), transparent 26%),
-    linear-gradient(180deg, #65597a 0%, #5c516d 100%);
-  font-family: var(--font-inter), sans-serif;
+  background-image: linear-gradient(
+    180deg,
+    #faf7f2 0%,
+    #f5f0e8 100%
+  );
+  font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,6 +37,18 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
