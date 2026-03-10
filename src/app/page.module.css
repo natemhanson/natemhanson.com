@@ -1,7 +1,7 @@
 .page {
-  width: min(1080px, calc(100vw - 32px));
+  width: min(920px, calc(100vw - 32px));
   margin: 0 auto;
-  padding: 24px 0 72px;
+  padding: 20px 0 56px;
 }
 
 .hero,
@@ -10,14 +10,14 @@
 .workSection,
 .topicSection,
 .contactSection {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 12px;
   background: var(--card);
 }
 
 .hero {
-  padding: 24px;
+  padding: 20px;
 }
 
 .topbar {
@@ -25,13 +25,13 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
 .wordmark {
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.04em;
   color: var(--muted);
 }
 
@@ -44,36 +44,37 @@
 .contactIntro a {
   color: var(--foreground);
   text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 0.18em;
-  transition: text-decoration-color 160ms ease;
+  text-underline-offset: 0.14em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+  gap: 24px;
   align-items: end;
 }
 
 .eyebrow,
 .sectionLabel {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--accent);
   font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .heroCopy h1,
 .sectionIntro h2,
 .contactIntro h2 {
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(3rem, 6.8vw, 6.4rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
   font-weight: 600;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  max-width: 10.5ch;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
 }
 
 .lead,
@@ -81,21 +82,21 @@
 .credCard p,
 .workCard p,
 .contactIntro p {
-  font-size: 1.06rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--muted);
 }
 
 .lead {
-  max-width: 52ch;
-  margin-top: 22px;
+  max-width: 58ch;
+  margin-top: 16px;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .primaryAction,
@@ -104,14 +105,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0 18px;
+  min-height: 38px;
+  padding: 0 14px;
   border-radius: 999px;
   border: 1px solid var(--border-strong);
-  transition:
-    background-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
 }
 
 .primaryAction {
@@ -130,17 +129,18 @@
 }
 
 .portraitFrame {
-  width: min(100%, 360px);
-  padding: 12px;
-  border-radius: 22px;
-  background: #d9d2c6;
+  width: min(100%, 280px);
+  padding: 8px;
+  border-radius: 10px;
+  background: #efebe4;
+  border: 1px solid var(--border);
 }
 
 .portrait {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: 6px;
 }
 
 .storySection,
@@ -148,25 +148,25 @@
 .workSection,
 .topicSection,
 .contactSection {
-  padding: 24px;
+  padding: 20px;
 }
 
 .sectionIntro {
   display: grid;
-  gap: 8px;
-  margin-bottom: 22px;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
 .sectionIntro h2,
 .contactIntro h2 {
-  font-size: clamp(2.35rem, 5vw, 4.4rem);
-  max-width: 11ch;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  max-width: 18ch;
 }
 
 .storyGrid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
-  gap: 18px;
+  gap: 14px;
 }
 
 .storyCard,
@@ -174,36 +174,34 @@
 .credCard,
 .workCard {
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 10px;
   background: #fffdf8;
 }
 
 .storyCard {
   display: grid;
-  gap: 18px;
-  padding: 22px;
+  gap: 14px;
+  padding: 18px;
 }
 
 .quoteCard {
   display: flex;
   align-items: end;
   min-height: 100%;
-  padding: 22px;
-  background: #1b1b1b;
+  padding: 18px;
+  background: #f3eee6;
 }
 
 .quoteCard p {
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: #fff7ef;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--foreground);
 }
 
 .credGrid,
 .workGrid {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .credGrid {
@@ -211,15 +209,16 @@
 }
 
 .credCard {
-  padding: 20px;
+  padding: 18px;
 }
 
 .credNumber {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   color: var(--accent);
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .workGrid {
@@ -228,13 +227,14 @@
 
 .workCard {
   display: grid;
-  gap: 14px;
-  padding: 22px;
+  gap: 12px;
+  padding: 18px;
 }
 
 .workCard h3 {
-  font-size: 1.4rem;
-  line-height: 1.1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
 }
 
 .workCard a {
@@ -244,47 +244,38 @@
 .topicWrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .topicChip {
-  padding: 11px 15px;
+  padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: #fffdf8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
 }
 
 .contactSection {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
-  gap: 22px;
+  gap: 18px;
   align-items: start;
 }
 
 .contactIntro {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nav a:hover,
-  .contactIntro a:hover {
-    text-decoration-color: currentColor;
-  }
-
-  .primaryAction:hover,
-  .secondaryAction:hover,
-  .workCard a:hover {
-    transform: translateY(-1px);
-  }
-
   .primaryAction:hover {
-    background: #2a2a2a;
+    background: #333;
   }
 
   .secondaryAction:hover,
   .workCard a:hover {
-    background: #f2ede3;
+    background: #f5f1ea;
   }
 }
 
@@ -314,8 +305,8 @@
   .workSection,
   .topicSection,
   .contactSection {
-    padding: 18px;
-    border-radius: 18px;
+    padding: 16px;
+    border-radius: 10px;
   }
 
   .topbar {

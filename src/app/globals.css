@@ -1,11 +1,11 @@
 :root {
-  --background: #f6f0e6;
-  --foreground: #161616;
-  --muted: rgba(22, 22, 22, 0.72);
-  --card: rgba(255, 251, 245, 0.84);
-  --border: rgba(22, 22, 22, 0.1);
-  --border-strong: rgba(22, 22, 22, 0.2);
-  --accent: #8f2f20;
+  --background: #faf8f4;
+  --foreground: #1e1e1e;
+  --muted: #5f5f5f;
+  --card: #ffffff;
+  --border: #e3ddd3;
+  --border-strong: #cfc6b9;
+  --accent: #5a5a5a;
 }
 
 html,
@@ -18,10 +18,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  background-image:
-    radial-gradient(circle at top left, rgba(255, 228, 187, 0.8), transparent 30%),
-    linear-gradient(180deg, #f7f2e9 0%, #efe5d6 100%);
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
