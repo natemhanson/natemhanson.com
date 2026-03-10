@@ -1,10 +1,10 @@
 .form {
   display: grid;
   gap: 16px;
-  padding: 22px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: #fffdf8;
+  padding: 20px;
+  border: 1px solid rgba(242, 240, 236, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .row {
@@ -20,21 +20,28 @@
 
 .field span {
   font-size: 0.92rem;
+  color: var(--muted);
 }
 
 .field input,
 .field textarea {
   width: 100%;
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
-  background: #fff;
-  padding: 14px 15px;
+  border: 1px solid rgba(242, 240, 236, 0.18);
+  border-radius: 10px;
+  background: rgba(18, 14, 28, 0.18);
+  padding: 13px 14px;
   color: var(--foreground);
   font: inherit;
 }
 
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(242, 240, 236, 0.38);
+}
+
 .field textarea {
   resize: vertical;
+  min-height: 180px;
 }
 
 .botcheck {
@@ -43,9 +50,10 @@
 
 .field input:focus,
 .field textarea:focus {
-  outline: 2px solid rgba(143, 47, 32, 0.18);
+  outline: 2px solid rgba(181, 197, 61, 0.18);
   outline-offset: 1px;
-  border-color: rgba(143, 47, 32, 0.45);
+  border-color: rgba(181, 197, 61, 0.55);
+  background: rgba(18, 14, 28, 0.28);
 }
 
 .actions {
@@ -55,12 +63,12 @@
 
 .actions button {
   width: fit-content;
-  min-height: 46px;
-  padding: 0 18px;
+  min-height: 40px;
+  padding: 0 16px;
   border: 0;
   border-radius: 999px;
-  background: var(--foreground);
-  color: #fffdf8;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--foreground);
   font: inherit;
   cursor: pointer;
 }
@@ -76,11 +84,11 @@
 }
 
 .error {
-  color: #8f2f20;
+  color: #ffd7cf;
 }
 
 .success {
-  color: #2f6a42;
+  color: #d7f0a8;
 }
 
 @media (max-width: 640px) {
