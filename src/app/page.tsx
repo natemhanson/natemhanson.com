@@ -9,23 +9,26 @@ const paragraphs = [
     million downloads as people wrestled with the same questions alongside me.
   </>,
   <>
-    The long process of deconstruction and examining the case for what
-    happened in Jerusalem 2,000 years ago eventually led me back to Jesus in a
-    way that felt grounded, factual, historical, and reasoned. That story is
-    part of why a podcast connected with so many people.
+    Ten years of doubt and deconstruction led me to think Christianity was
+    done for me. Before I closed the door completely, I decided to really look
+    into what happened in Jerusalem almost 2,000 years ago: the Gospel
+    writers, the rival explanations, the witnesses, the historical setting,
+    and the case for the resurrection. I was surprised by what I found, and
+    that eventually led me back to Jesus in a much more real way.
   </>,
   <>
-    I eventually shifted the show into{" "}
+    So I changed my podcast to{" "}
     <a href="https://faithlabshow.com" target="_blank" rel="noreferrer">
       Faith Lab
     </a>
-    , where Shelby and I bring on Christian scholars, academics, and
+    . My wife and I bring on Christian scholars, academics, and
     archaeologists to help people understand the strength of the Christian
     story. I also built{" "}
     <a href="https://faithpods.com" target="_blank" rel="noreferrer">
       FaithPods
     </a>
-    .
+    .com to help other Christian podcasters connect with more people and grow
+    their shows.
   </>,
 ];
 
