@@ -53,15 +53,6 @@ export default function Home() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <div className={styles.topbar}>
-          <p className={styles.wordmark}>Nate Hanson</p>
-          <nav className={styles.nav}>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-
         <div className={styles.intro}>
           <div className={styles.portraitWrap}>
             <Image

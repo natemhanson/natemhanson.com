@@ -11,25 +11,6 @@
   margin-bottom: 56px;
 }
 
-.topbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 34px;
-}
-
-.wordmark {
-  font-size: 0.98rem;
-  font-weight: 700;
-}
-
-.nav {
-  display: flex;
-  gap: 18px;
-}
-
-.nav a,
 .about a,
 .contactCopy a {
   color: var(--link);
@@ -136,7 +117,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nav a:hover,
   .about a:hover,
   .contactCopy a:hover,
   .workCard a:hover {
@@ -159,16 +139,6 @@
   .page {
     width: min(100vw - 24px, 1120px);
     padding-top: 30px;
-  }
-
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav {
-    flex-wrap: wrap;
   }
 
   .intro {
