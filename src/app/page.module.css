@@ -49,6 +49,7 @@
   font-size: 0.98rem;
   line-height: 1.55;
   color: var(--muted);
+  font-weight: 700;
 }
 
 .titleBlock p span {
