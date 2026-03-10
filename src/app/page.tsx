@@ -12,11 +12,7 @@ const paragraphs = [
     The long process of deconstruction and examining the case for what
     happened in Jerusalem 2,000 years ago eventually led me back to Jesus in a
     way that felt grounded, factual, historical, and reasoned. That story is
-    part of why{" "}
-    <a href="https://almostheretical.com" target="_blank" rel="noreferrer">
-      Almost Heretical
-    </a>{" "}
-    mattered to so many people.
+    part of why a podcast connected with so many people.
   </>,
   <>
     I eventually shifted the show into{" "}
