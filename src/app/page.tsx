@@ -76,10 +76,7 @@ export default function Home() {
 
           <div className={styles.titleBlock}>
             <h1>Nate Hanson</h1>
-            <p>
-              Faith Lab, FaithPods, and work around faith, scholarship,
-              Christian media, and meaningful conversation.
-            </p>
+            <p>Co-host of Faith Lab. Founder of FaithPods.</p>
           </div>
         </div>
       </header>
