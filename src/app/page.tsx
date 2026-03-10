@@ -20,7 +20,11 @@ const paragraphs = [
     found surprised me and eventually brought me back to Jesus.
   </>,
   <>
-    That journey reshaped everything. My wife Shelby and I turned the podcast
+    That journey reshaped everything. My wife{" "}
+    <a href="https://shelbyhanson.com" target="_blank" rel="noreferrer">
+      Shelby
+    </a>{" "}
+    and I turned the podcast
     into{" "}
     <a href="https://faithlabshow.com" target="_blank" rel="noreferrer">
       Faith Lab
