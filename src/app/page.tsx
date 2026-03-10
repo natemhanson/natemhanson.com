@@ -68,8 +68,18 @@ export default function Home() {
           <div className={styles.titleBlock}>
             <h1>Nate Hanson</h1>
             <p>
-              <span>Co-host of Faith Lab</span>
-              <span>Founder of FaithPods</span>
+              <span>
+                Co-host of{" "}
+                <a href="https://faithlabshow.com" target="_blank" rel="noreferrer">
+                  Faith Lab
+                </a>
+              </span>
+              <span>
+                Founder of{" "}
+                <a href="https://faithpods.com" target="_blank" rel="noreferrer">
+                  FaithPods
+                </a>
+              </span>
             </p>
           </div>
         </div>

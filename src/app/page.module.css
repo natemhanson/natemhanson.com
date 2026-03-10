@@ -56,6 +56,11 @@
   display: block;
 }
 
+.titleBlock p a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
 .about {
   display: grid;
   gap: 26px;
@@ -123,6 +128,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .about a:hover,
+  .titleBlock p a:hover,
   .contactCopy a:hover,
   .workCard a:hover {
     opacity: 0.8;

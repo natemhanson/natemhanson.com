@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "Nate Hanson",
   description:
     "Nate Hanson is the host of Faith Lab and the builder behind FaithPods. Book interviews, explore current work, and get in touch without exposing a personal email.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
