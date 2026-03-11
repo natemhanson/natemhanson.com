@@ -59,7 +59,6 @@ const work = [
 export default function Home() {
   return (
     <>
-      <div className={styles.accentBar} />
       <main className={styles.page}>
         <header className={styles.header}>
           <div className={styles.portraitWrap}>

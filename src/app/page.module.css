@@ -1,15 +1,3 @@
-/* ---- Accent bar ---- */
-
-.accentBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
-  z-index: 100;
-}
-
 /* ---- Page ---- */
 
 .page {
