@@ -32,7 +32,7 @@ function createMotes(width: number, height: number, count: number): Mote[] {
     vx: (Math.random() - 0.5) * 0.18,
     vy: (Math.random() - 0.5) * 0.18,
     r: 1.2 + Math.random() * 2.4,
-    base: 0.12 + Math.random() * 0.18,
+    base: 0.18 + Math.random() * 0.22,
     phase: Math.random() * Math.PI * 2,
     caught: false,
     catchFlash: 0,
