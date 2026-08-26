@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Newsreader, DM_Sans } from "next/font/google";
+import Script from "next/script";
+import { AppearanceControls } from "@/components/appearance-controls";
+import { AmbientPlay } from "@/components/ambient-play";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -33,15 +36,40 @@ export const metadata: Metadata = {
   },
 };
 
+const appearanceBootScript = `
+(() => {
+  try {
+    const stored = localStorage.getItem("nate-theme");
+    const theme =
+      stored === "light" || stored === "dark"
+        ? stored
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+    document.documentElement.dataset.theme = theme;
+    if (localStorage.getItem("nate-colorblind") === "on") {
+      document.documentElement.dataset.colorblind = "on";
+    }
+  } catch (_) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${newsreader.variable} ${dmSans.variable}`}>
-        {children}
+        <Script
+          id="appearance-boot"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: appearanceBootScript }}
+        />
+        <AmbientPlay />
+        <AppearanceControls />
+        <div className="site">{children}</div>
       </body>
     </html>
   );

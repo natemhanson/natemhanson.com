@@ -59,7 +59,7 @@
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(92, 107, 69, 0.16);
+  box-shadow: 0 0 0 3px var(--accent-ring);
 }
 
 .actions {
@@ -74,7 +74,7 @@
   border: 0;
   border-radius: 999px;
   background: var(--accent);
-  color: #f7f3ea;
+  color: var(--accent-on);
   font: inherit;
   font-size: 0.9rem;
   font-weight: 600;
@@ -108,11 +108,11 @@
 }
 
 .error {
-  color: #c53030;
+  color: var(--danger);
 }
 
 .success {
-  color: #2f855a;
+  color: var(--success);
 }
 
 @media (max-width: 640px) {

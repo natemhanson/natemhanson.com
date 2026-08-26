@@ -22,8 +22,8 @@
   border-radius: 22px;
   overflow: hidden;
   box-shadow:
-    0 1px 2px rgba(44, 36, 24, 0.06),
-    0 10px 24px rgba(44, 36, 24, 0.1);
+    0 1px 2px var(--shadow-soft),
+    0 10px 24px var(--shadow);
 }
 
 .portrait {
@@ -61,7 +61,7 @@
   color: var(--foreground);
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(92, 107, 69, 0.35);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
 }
 
@@ -80,7 +80,7 @@
 .lede a {
   color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: rgba(92, 107, 69, 0.35);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
 }
 
@@ -102,7 +102,7 @@
 .letter a {
   color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: rgba(92, 107, 69, 0.35);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
 }
 
@@ -134,8 +134,8 @@
   color: var(--foreground);
   text-decoration: none;
   box-shadow:
-    0 1px 0 rgba(44, 36, 24, 0.04),
-    0 14px 36px rgba(44, 36, 24, 0.06);
+    0 1px 0 var(--shadow-faint),
+    0 14px 36px var(--shadow-soft);
   transition:
     transform 0.2s ease,
     box-shadow 0.3s ease;
@@ -165,7 +165,7 @@
   padding: 0 20px;
   border-radius: 999px;
   background: var(--accent);
-  color: #f7f3ea;
+  color: var(--accent-on);
   font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -191,7 +191,7 @@
   color: var(--foreground);
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(92, 107, 69, 0.35);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
 }
 
@@ -219,7 +219,7 @@
 
 .contactCopy a {
   text-decoration: underline;
-  text-decoration-color: rgba(92, 107, 69, 0.35);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
 }
 
@@ -251,8 +251,8 @@
   .arborCard:hover {
     transform: translateY(-2px);
     box-shadow:
-      0 1px 0 rgba(44, 36, 24, 0.04),
-      0 18px 44px rgba(44, 36, 24, 0.1);
+      0 1px 0 var(--shadow-faint),
+      0 18px 44px var(--shadow);
   }
 
   .arborCard:hover .arborButton svg {
