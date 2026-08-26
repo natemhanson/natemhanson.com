@@ -268,12 +268,9 @@
     padding-top: 40px;
   }
 
-  .footer {
-    padding-bottom: 96px;
-  }
-
   .masthead {
     gap: 16px;
+    padding-right: 52px;
   }
 
   .portraitWrap {

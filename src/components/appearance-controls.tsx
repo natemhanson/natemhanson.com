@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import {
   THEME_KEY,
   COLORBLIND_KEY,
@@ -38,43 +38,15 @@ function getServerColorblind(): boolean {
   return false;
 }
 
-function MoonIcon() {
+function SettingsIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.8" />
       <path
-        d="M20.5 14.2A8.2 8.2 0 0 1 9.8 3.5 7.5 7.5 0 1 0 20.5 14.2Z"
+        d="M12 3.2v1.8M12 19v1.8M4.9 6.4l1.3 1.3M17.8 16.3l1.3 1.3M3.2 12h1.8M19 12h1.8M4.9 17.6l1.3-1.3M17.8 7.7l1.3-1.3"
         stroke="currentColor"
         strokeWidth="1.8"
         strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function SunIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
-      <path
-        d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function VisionIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.8" />
-      <path
-        d="M2.8 12S6.4 5.8 12 5.8 21.2 12 21.2 12 17.6 18.2 12 18.2 2.8 12 2.8 12Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinejoin="round"
       />
     </svg>
   );
@@ -87,6 +59,32 @@ export function AppearanceControls() {
     getColorblindSnapshot,
     getServerColorblind,
   );
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const menuId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+
+    function onPointerDown(event: PointerEvent) {
+      const root = rootRef.current;
+      if (!root) return;
+      if (event.target instanceof Node && !root.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+
+    window.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   function toggleTheme() {
     const next: ThemeMode = theme === "dark" ? "light" : "dark";
@@ -103,29 +101,44 @@ export function AppearanceControls() {
   }
 
   return (
-    <div className={styles.controls} role="group" aria-label="Appearance">
+    <div className={styles.controls} ref={rootRef}>
       <button
         type="button"
-        className={styles.button}
-        aria-pressed={theme === "dark"}
-        aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-        title={theme === "dark" ? "Light mode" : "Dark mode"}
-        onClick={toggleTheme}
+        className={styles.trigger}
+        aria-label="Appearance settings"
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-controls={menuId}
+        title="Appearance"
+        onClick={() => setOpen((value) => !value)}
       >
-        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+        <SettingsIcon />
       </button>
-      <button
-        type="button"
-        className={styles.button}
-        aria-pressed={colorblind}
-        aria-label={
-          colorblind ? "Turn off colorblind-friendly mode" : "Turn on colorblind-friendly mode"
-        }
-        title="Colorblind-friendly colors"
-        onClick={toggleColorblind}
-      >
-        <VisionIcon />
-      </button>
+
+      {open ? (
+        <div className={styles.menu} id={menuId} role="menu" aria-label="Appearance">
+          <button
+            type="button"
+            className={styles.item}
+            role="menuitemcheckbox"
+            aria-checked={theme === "dark"}
+            onClick={toggleTheme}
+          >
+            <span>Dark mode</span>
+            <span className={styles.switch} data-on={theme === "dark" ? "true" : "false"} />
+          </button>
+          <button
+            type="button"
+            className={styles.item}
+            role="menuitemcheckbox"
+            aria-checked={colorblind}
+            onClick={toggleColorblind}
+          >
+            <span>Colorblind mode</span>
+            <span className={styles.switch} data-on={colorblind ? "true" : "false"} />
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
