@@ -54,7 +54,8 @@
 
 @media (max-width: 640px) {
   .controls {
-    top: 12px;
+    top: auto;
+    bottom: 16px;
     right: 12px;
     gap: 10px;
     padding: 6px;
