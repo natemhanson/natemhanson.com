@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import {
   THEME_KEY,
   COLORBLIND_KEY,
@@ -88,19 +88,19 @@ export function AppearanceControls() {
     getServerColorblind,
   );
 
-  const toggleTheme = useCallback(() => {
+  function toggleTheme() {
     const next: ThemeMode = theme === "dark" ? "light" : "dark";
     window.localStorage.setItem(THEME_KEY, next);
     applyAppearance(next, colorblind);
     emit();
-  }, [theme, colorblind]);
+  }
 
-  const toggleColorblind = useCallback(() => {
+  function toggleColorblind() {
     const next = !colorblind;
     window.localStorage.setItem(COLORBLIND_KEY, next ? "on" : "off");
     applyAppearance(theme, next);
     emit();
-  }, [theme, colorblind]);
+  }
 
   return (
     <div className={styles.controls} role="group" aria-label="Appearance">
