@@ -3,7 +3,7 @@ export const X_PROFILE_URL = `https://x.com/${X_HANDLE}`;
 
 const FEED_URL = `https://api.fxtwitter.com/2/profile/${X_HANDLE}/statuses?count=20`;
 const POST_LIMIT = 5;
-const REVALIDATE_SECONDS = 60 * 60;
+const REVALIDATE_SECONDS = 5 * 60;
 
 export type XPhoto = {
   url: string;
