@@ -29,6 +29,10 @@ NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=
 
 That is enough for the form to work. No verified sending domain is required.
 
+## Recent posts from X
+
+The homepage pulls recent public posts from [@natemhanson](https://x.com/natemhanson) and refreshes about once an hour. No X API key is required. If the feed is unavailable, the site still links out to the profile.
+
 ## Deployment
 
 Push this repo to GitHub, import it into Vercel, and connect `natemhanson.com` plus `www.natemhanson.com` in the Vercel project settings.
