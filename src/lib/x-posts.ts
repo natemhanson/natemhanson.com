@@ -1,9 +1,12 @@
+import { connection } from "next/server";
+
 export const X_HANDLE = "natemhanson";
 export const X_PROFILE_URL = `https://x.com/${X_HANDLE}`;
 
 const FEED_URL = `https://api.fxtwitter.com/2/profile/${X_HANDLE}/statuses?count=20`;
 const POST_LIMIT = 5;
-const REVALIDATE_SECONDS = 60 * 60;
+const FRESH_MS = 60 * 1000;
+const FALLBACK_MAX_AGE_MS = 60 * 60 * 1000;
 
 export type XPhoto = {
   url: string;
@@ -70,24 +73,51 @@ type ApiResponse = {
   results?: Array<{ type?: string } & ApiStatus>;
 };
 
+// Per-instance memory, not a durable cache: it keeps repeat renders on a warm
+// server from hammering the API, and papers over brief API outages. A deleted
+// post can outlive the delete here by at most FRESH_MS.
+let lastGood: { posts: XPost[]; fetchedAt: number } | null = null;
+
 export async function getRecentXPosts(): Promise<XPost[]> {
+  // Without this the page is prerendered and the feed freezes at deploy time
+  // (an uncached fetch alone no longer opts a route out of static rendering).
+  await connection();
+
+  if (lastGood && Date.now() - lastGood.fetchedAt < FRESH_MS) {
+    return lastGood.posts;
+  }
+
+  const posts = await fetchLiveXPosts();
+  if (posts) {
+    lastGood = { posts, fetchedAt: Date.now() };
+    return posts;
+  }
+
+  if (lastGood && Date.now() - lastGood.fetchedAt < FALLBACK_MAX_AGE_MS) {
+    return lastGood.posts;
+  }
+
+  return [];
+}
+
+async function fetchLiveXPosts(): Promise<XPost[] | null> {
   try {
     const response = await fetch(FEED_URL, {
       headers: {
         Accept: "application/json",
         "User-Agent": "natemhanson.com",
       },
-      next: { revalidate: REVALIDATE_SECONDS },
+      cache: "no-store",
       signal: AbortSignal.timeout(8000),
     });
 
     if (!response.ok) {
       console.error(`X feed request failed: ${response.status}`);
-      return [];
+      return null;
     }
 
     const payload = (await response.json()) as ApiResponse;
-    if (payload.code !== 200 || !Array.isArray(payload.results)) return [];
+    if (payload.code !== 200 || !Array.isArray(payload.results)) return null;
 
     const posts: XPost[] = [];
 
@@ -100,7 +130,7 @@ export async function getRecentXPosts(): Promise<XPost[]> {
     return posts;
   } catch (error) {
     console.error("Failed to load X posts", error);
-    return [];
+    return null;
   }
 }
 
