@@ -108,16 +108,15 @@ export default function Home() {
             </span>
           </a>
           <p className={styles.also}>
-            I also co-host{" "}
+            I also host{" "}
             <a
               href="https://faithlabshow.com"
               target="_blank"
               rel="noreferrer"
             >
               Faith Lab
-            </a>{" "}
-            with Shelby: conversations about the evidence for
-            Christianity.
+            </a>
+            : conversations about the evidence for Christianity.
           </p>
         </section>
 
