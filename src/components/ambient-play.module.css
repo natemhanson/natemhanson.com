@@ -14,21 +14,20 @@
   bottom: 18px;
   z-index: 30;
   transform: translateX(-50%);
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--controls-border);
-  background: var(--controls-bg);
-  backdrop-filter: blur(8px);
-  color: var(--muted);
+  color: rgba(110, 98, 86, 0.7);
   font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.45s ease;
 }
 
+:global(html[data-theme="dark"]) .whisper {
+  color: rgba(168, 154, 136, 0.7);
+}
+
 .whisperVisible {
-  opacity: 0.72;
+  opacity: 1;
 }
 
 @media (max-width: 640px) {

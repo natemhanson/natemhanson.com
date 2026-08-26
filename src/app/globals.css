@@ -20,7 +20,6 @@
   --shadow-faint: rgba(44, 36, 24, 0.04);
   --danger: #c53030;
   --success: #2f855a;
-  --play: 140, 150, 90;
   --controls-bg: rgba(244, 234, 216, 0.88);
   --controls-border: rgba(203, 187, 164, 0.7);
 }
@@ -47,7 +46,6 @@ html[data-theme="dark"] {
   --shadow-faint: rgba(0, 0, 0, 0.18);
   --danger: #f87171;
   --success: #6ee7a0;
-  --play: 170, 190, 120;
   --controls-bg: rgba(34, 28, 22, 0.9);
   --controls-border: rgba(90, 79, 67, 0.7);
 }
@@ -62,7 +60,6 @@ html[data-colorblind="on"] {
   --link: #2b6cb0;
   --success: #b7791f;
   --danger: #9b2c2c;
-  --play: 55, 120, 190;
 }
 
 html[data-theme="dark"][data-colorblind="on"] {
@@ -74,7 +71,6 @@ html[data-theme="dark"][data-colorblind="on"] {
   --link: #63b3ed;
   --success: #f6ad55;
   --danger: #fc8181;
-  --play: 120, 185, 235;
 }
 
 html,

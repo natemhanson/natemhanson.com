@@ -25,6 +25,10 @@ type Pointer = {
 const DESKTOP_COUNT = 28;
 const MOBILE_COUNT = 18;
 
+/* Game palette is fixed — independent of dark / colorblind appearance modes. */
+const PLAY_RGB_LIGHT = "132, 142, 88";
+const PLAY_RGB_DARK = "186, 198, 148";
+
 function createMotes(width: number, height: number, count: number): Mote[] {
   return Array.from({ length: count }, () => ({
     x: Math.random() * width,
@@ -40,10 +44,9 @@ function createMotes(width: number, height: number, count: number): Mote[] {
 }
 
 function playRgb(): string {
-  const value = getComputedStyle(document.documentElement)
-    .getPropertyValue("--play")
-    .trim();
-  return value || "140, 150, 90";
+  return document.documentElement.dataset.theme === "dark"
+    ? PLAY_RGB_DARK
+    : PLAY_RGB_LIGHT;
 }
 
 export function AmbientPlay() {
@@ -121,12 +124,13 @@ export function AmbientPlay() {
       if (!pointer.coarse) pointer.active = false;
     };
 
+    // Only follow light/dark for mote visibility — never colorblind mode.
     const themeObserver = new MutationObserver(() => {
       rgb = playRgb();
     });
     themeObserver.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["data-theme", "data-colorblind"],
+      attributeFilter: ["data-theme"],
     });
 
     const tick = () => {
