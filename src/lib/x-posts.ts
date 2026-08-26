@@ -102,7 +102,10 @@ export async function getRecentXPosts(): Promise<XPost[]> {
 
 async function fetchLiveXPosts(): Promise<XPost[] | null> {
   try {
-    const response = await fetch(FEED_URL, {
+    // fxtwitter caches API responses at its edge, keyed by URL, and can keep
+    // serving a deleted post for hours; a unique param per request skips that
+    // cache (the API ignores parameters it doesn't know).
+    const response = await fetch(`${FEED_URL}&fresh=${Date.now()}`, {
       headers: {
         Accept: "application/json",
         "User-Agent": "natemhanson.com",
