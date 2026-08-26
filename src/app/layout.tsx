@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nate Hanson",
     description:
-      "Dad, builder, and co-founder of Arbor — helping more families raise their kids together.",
+      "Dad, builder, and co-founder of Arbor, helping more families raise their kids together.",
     url: "https://natemhanson.com",
     siteName: "Nate Hanson",
     type: "website",
