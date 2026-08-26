@@ -108,7 +108,11 @@ export default function Home() {
             </span>
           </a>
           <p className={styles.also}>
-            I also co-host{" "}
+            I also help build{" "}
+            <a href="https://buffer.com" target="_blank" rel="noreferrer">
+              Buffer
+            </a>
+            . And I co-host{" "}
             <a
               href="https://faithlabshow.com"
               target="_blank"
