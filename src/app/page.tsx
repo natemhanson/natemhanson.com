@@ -1,5 +1,8 @@
 import Image from "next/image";
+import { Suspense } from "react";
 import { ContactForm } from "@/components/contact-form";
+import { XFeed, XFeedSkeleton } from "@/components/x-feed";
+import { X_PROFILE_URL } from "@/lib/x-posts";
 import styles from "./page.module.css";
 
 function ArrowIcon() {
@@ -120,11 +123,88 @@ export default function Home() {
           </p>
         </section>
 
+        <section id="along-the-way" className={styles.section}>
+          <p className={styles.sectionLabel}>Along the way</p>
+          <p className={styles.pastLede}>
+            Before Arbor, a few other chapters.
+          </p>
+          <ul className={styles.pastList}>
+            <li>
+              <p className={styles.pastTitle}>Radio</p>
+              <p>Producer in Los Angeles and Portland.</p>
+            </li>
+            <li>
+              <p className={styles.pastTitle}>Crazy Love</p>
+              <p>
+                I worked with Francis Chan, helped build Crazy Love Ministries,
+                and planted churches with him.
+              </p>
+            </li>
+            <li>
+              <p className={styles.pastTitle}>
+                <a
+                  href="https://appleinsider.com/editor/nate+hanson"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  AppleInsider
+                </a>
+              </p>
+              <p>Staff writer and podcast host.</p>
+            </li>
+            <li>
+              <p className={styles.pastTitle}>Sumry</p>
+              <p>
+                A story-based resume. We built it, grew it, and sold it.
+              </p>
+            </li>
+            <li>
+              <p className={styles.pastTitle}>Work Different</p>
+              <p>
+                A job board for companies that took care of their people. We
+                built that, then sold it too.
+              </p>
+            </li>
+            <li>
+              <p className={styles.pastTitle}>Podcasts</p>
+              <p>
+                I started a show and a podcasting network. That work continues
+                in{" "}
+                <a
+                  href="https://faithlabshow.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Faith Lab
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://faithpods.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  FaithPods
+                </a>
+                .
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <Suspense fallback={<XFeedSkeleton />}>
+          <XFeed />
+        </Suspense>
+
         <section id="contact" className={styles.contactSection}>
           <div className={styles.contactCopy}>
             <p className={styles.sectionLabel}>Get in touch</p>
             <p>
-              Want to talk about Arbor, family, or anything else? Write me here.
+              Want to talk about Arbor, family, or anything else? Write me here,
+              or find me on{" "}
+              <a href={X_PROFILE_URL} target="_blank" rel="noreferrer">
+                X
+              </a>
+              .
             </p>
             <p>
               Questions about the show go to{" "}
