@@ -25,7 +25,7 @@ type Pointer = {
 const DESKTOP_COUNT = 28;
 const MOBILE_COUNT = 18;
 
-/* Game palette is fixed — independent of dark / colorblind appearance modes. */
+/* Game palette is fixed and independent of dark / colorblind appearance modes. */
 const PLAY_RGB_LIGHT = "132, 142, 88";
 const PLAY_RGB_DARK = "186, 198, 148";
 
@@ -124,7 +124,7 @@ export function AmbientPlay() {
       if (!pointer.coarse) pointer.active = false;
     };
 
-    // Only follow light/dark for mote visibility — never colorblind mode.
+    // Only follow light/dark for mote visibility, never colorblind mode.
     const themeObserver = new MutationObserver(() => {
       rgb = playRgb();
     });

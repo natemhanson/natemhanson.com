@@ -73,7 +73,7 @@ export default function Home() {
               Shelby
             </a>{" "}
             and I are raising three kids at home. We wanted more time with
-            them&nbsp;&mdash; a closer family, and a childhood that isn&rsquo;t
+            them: a closer family, and a childhood that isn&rsquo;t
             swallowed by school. Homeschooling was the way. The planning, the
             lessons, and the records were the wall.
           </p>
@@ -98,7 +98,7 @@ export default function Home() {
               <h2>Arbor</h2>
               <p>
                 A whole homeschool year, planned around your kid. Shelby and I
-                built it so more families can teach at home&nbsp;&mdash; without
+                built it so more families can teach at home without
                 drowning in the work that isn&rsquo;t the kids.
               </p>
             </div>
@@ -108,16 +108,15 @@ export default function Home() {
             </span>
           </a>
           <p className={styles.also}>
-            I also co-host{" "}
+            I also host{" "}
             <a
               href="https://faithlabshow.com"
               target="_blank"
               rel="noreferrer"
             >
               Faith Lab
-            </a>{" "}
-            with Shelby&nbsp;&mdash; conversations about the evidence for
-            Christianity.
+            </a>
+            : conversations about the evidence for Christianity.
           </p>
         </section>
 
