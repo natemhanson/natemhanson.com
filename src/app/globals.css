@@ -1,13 +1,14 @@
 :root {
-  --background: #faf7f2;
-  --foreground: #1c1917;
-  --muted: #7c7670;
-  --accent: #b8533e;
-  --accent-hover: #a34835;
-  --card: #f0ebe3;
-  --border: #e2ddd5;
-  --border-strong: #c8c2b8;
-  --link: #b8533e;
+  --background: #f4ead8;
+  --foreground: #2c2418;
+  --muted: #6e6256;
+  --muted-ink: #5a4f43;
+  --accent: #5c6b45;
+  --accent-hover: #4a5737;
+  --card: #efe4cf;
+  --border: #e0d2bb;
+  --border-strong: #cbbba4;
+  --link: #5c6b45;
 }
 
 html,
@@ -20,11 +21,9 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  background-image: linear-gradient(
-    180deg,
-    #faf7f2 0%,
-    #f5f0e8 100%
-  );
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -10%, #fbf6ea 0%, transparent 55%),
+    linear-gradient(180deg, #f6efe3 0%, #f0e4d0 100%);
   font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,7 +44,7 @@ a {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;

@@ -15,9 +15,18 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://natemhanson.com"),
   title: "Nate Hanson",
   description:
-    "Nate Hanson is the host of Faith Lab and the builder behind FaithPods. Book interviews, explore current work, and get in touch without exposing a personal email.",
+    "Dad, builder, and co-founder of Arbor. I started Arbor to take the hard parts of homeschooling off parents’ plates, so more families can raise their kids together.",
+  openGraph: {
+    title: "Nate Hanson",
+    description:
+      "Dad, builder, and co-founder of Arbor — helping more families raise their kids together.",
+    url: "https://natemhanson.com",
+    siteName: "Nate Hanson",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

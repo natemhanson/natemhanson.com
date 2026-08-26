@@ -2,159 +2,133 @@ import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import styles from "./page.module.css";
 
-const lede = (
-  <>
-    I was a church planter and worship leader who lost his faith. I started a
-    podcast to talk about it, and more than 2 million downloads later, it was
-    clear I wasn&rsquo;t the only one asking those questions. But then
-    something surprising happened&hellip;
-  </>
-);
-
-const paragraphs = [
-  <>
-    After a decade of doubt, I was ready to walk away from Christianity for
-    good. But before I closed the door, I decided to seriously examine what
-    happened in Jerusalem 2,000 years ago: the Gospel writers, the rival
-    explanations, the witnesses, and the case for the resurrection. What I
-    found surprised me and eventually brought me back to Jesus.
-  </>,
-  <>
-    That journey reshaped everything. My wife{" "}
-    <a href="https://shelbyhanson.com" target="_blank" rel="noreferrer">
-      Shelby
-    </a>{" "}
-    and I turned the podcast
-    into{" "}
-    <a href="https://faithlabshow.com" target="_blank" rel="noreferrer">
-      Faith Lab
-    </a>
-    , where we sit down with scholars, academics, and archaeologists to
-    explore the evidence behind the faith. I also built{" "}
-    <a href="https://faithpods.com" target="_blank" rel="noreferrer">
-      FaithPods
-    </a>
-    , a platform helping Christian podcasters sharpen their craft and reach
-    more people.
-  </>,
-];
-
-const work = [
-  {
-    name: "Faith Lab",
-    description:
-      "Conversations with leading scholars, academics, and archaeologists exploring the evidence for Christianity.",
-    href: "https://faithlabshow.com",
-    cta: "Visit Faith Lab",
-  },
-  {
-    name: "FaithPods",
-    description:
-      "Helping Christian podcasters sharpen their craft, grow their audience, and find real community.",
-    href: "https://faithpods.com",
-    cta: "Explore FaithPods",
-  },
-];
+function ArrowIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <line x1="7" y1="17" x2="17" y2="7" />
+      <polyline points="7 7 17 7 17 17" />
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
     <>
       <main className={styles.page}>
-        <header className={styles.header}>
+        <header className={styles.masthead}>
           <div className={styles.portraitWrap}>
             <Image
               src="/nate.jpg"
               alt="Nate Hanson"
-              width={2699}
-              height={2699}
+              width={1254}
+              height={1254}
               priority
+              sizes="96px"
               className={styles.portrait}
             />
           </div>
-          <h1 className={styles.name}>Nate Hanson</h1>
-          <div className={styles.roles}>
-            <span>
-              Co-host of{" "}
+          <div className={styles.mastheadCopy}>
+            <h1 className={styles.name}>Nate Hanson</h1>
+            <p className={styles.tag}>
+              Dad. Builder. Co-founder of{" "}
               <a
-                href="https://faithlabshow.com"
+                href="https://arborhomeschool.com"
                 target="_blank"
                 rel="noreferrer"
               >
-                Faith Lab
+                Arbor
               </a>
-            </span>
-            <span className={styles.dividerDot} aria-hidden="true" />
-            <span>
-              Founder of{" "}
-              <a
-                href="https://faithpods.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                FaithPods
-              </a>
-            </span>
+              .
+            </p>
           </div>
         </header>
 
-        <hr className={styles.divider} />
+        <p className={styles.lede}>
+          I&rsquo;m a dad and a builder. I started{" "}
+          <a
+            href="https://arborhomeschool.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Arbor
+          </a>{" "}
+          to take the hard parts of homeschooling off parents&rsquo; plates, so
+          more families can raise their kids together.
+        </p>
 
-        <section id="about" className={styles.about}>
-          <p className={styles.lede}>{lede}</p>
-          <div className={styles.aboutColumns}>
-            {paragraphs.map((paragraph, index) => (
-              <p key={index} className={styles.aboutParagraph}>
-                {paragraph}
-              </p>
-            ))}
-          </div>
+        <section id="about" className={styles.letter}>
+          <p>
+            My wife{" "}
+            <a href="https://shelbyhanson.com" target="_blank" rel="noreferrer">
+              Shelby
+            </a>{" "}
+            and I are raising three kids at home. We wanted more time with
+            them&nbsp;&mdash; a closer family, and a childhood that isn&rsquo;t
+            swallowed by school. Homeschooling was the way. The planning, the
+            lessons, and the records were the wall.
+          </p>
+          <p>
+            So we built Arbor together. It carries those hard parts so parents
+            can stay at the table with their kids. That&rsquo;s the work that
+            matters most to me right now: helping more people raise their
+            children well, build a strong family, and actually have the hours
+            to spend with them.
+          </p>
         </section>
-
-        <hr className={styles.divider} />
 
         <section id="work" className={styles.section}>
-          <p className={styles.sectionLabel}>Work</p>
-          <div className={styles.workStack}>
-            {work.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className={styles.workCard}
-              >
-                <div className={styles.workContent}>
-                  <h2>{item.name}</h2>
-                  <p>{item.description}</p>
-                </div>
-                <span className={styles.workCta}>
-                  {item.cta}
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </a>
-            ))}
-          </div>
+          <p className={styles.sectionLabel}>What I&rsquo;m building</p>
+          <a
+            href="https://arborhomeschool.com"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.arborCard}
+          >
+            <div className={styles.arborCopy}>
+              <h2>Arbor</h2>
+              <p>
+                A whole homeschool year, planned around your kid. Shelby and I
+                built it so more families can teach at home&nbsp;&mdash; without
+                drowning in the work that isn&rsquo;t the kids.
+              </p>
+            </div>
+            <span className={styles.arborButton}>
+              See Arbor
+              <ArrowIcon />
+            </span>
+          </a>
+          <p className={styles.also}>
+            I also co-host{" "}
+            <a
+              href="https://faithlabshow.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Faith Lab
+            </a>{" "}
+            with Shelby&nbsp;&mdash; conversations about the evidence for
+            Christianity.
+          </p>
         </section>
-
-        <hr className={styles.divider} />
 
         <section id="contact" className={styles.contactSection}>
           <div className={styles.contactCopy}>
-            <p className={styles.sectionLabel}>Get in Touch</p>
+            <p className={styles.sectionLabel}>Get in touch</p>
             <p>
-              Questions about the show? Head to{" "}
+              Want to talk about Arbor, family, or anything else? Write me here.
+            </p>
+            <p>
+              Questions about the show go to{" "}
               <a
                 href="https://faithlabshow.com/contact"
                 target="_blank"
@@ -163,9 +137,6 @@ export default function Home() {
                 faithlabshow.com/contact
               </a>
               .
-            </p>
-            <p>
-              For everything else, drop me a note here.
             </p>
           </div>
 
