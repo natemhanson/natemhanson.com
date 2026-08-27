@@ -349,8 +349,21 @@ export default function Home() {
             <li className={styles.alongCard}>
               <p className={styles.alongTitle}>Crazy Love</p>
               <p className={styles.alongText}>
-                I worked with Francis Chan, helped build Crazy Love
-                Ministries, and planted churches with him.
+                I worked with Francis Chan and helped build Crazy Love
+                Ministries.
+              </p>
+            </li>
+            <li className={styles.alongCard}>
+              <p className={styles.alongTitle}>Church</p>
+              <p className={styles.alongText}>
+                I was a pastor and church planter in inner-city San
+                Francisco.
+              </p>
+            </li>
+            <li className={styles.alongCard}>
+              <p className={styles.alongTitle}>Nonprofit</p>
+              <p className={styles.alongText}>
+                Inner-city nonprofit work in San Francisco.
               </p>
             </li>
             <li className={styles.alongCard}>
