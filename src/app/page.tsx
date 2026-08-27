@@ -156,7 +156,7 @@ function AmericanFlag() {
 
 const TICKER_ITEMS = [
   "Co-founder of Arbor",
-  "Three kids, homeschooled",
+  "Helping families homeschool",
   "Helps build Buffer",
   "Hosts Faith Lab",
 ];
@@ -186,7 +186,7 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <div className={styles.chipRow}>
-              <span className={styles.chip}>Dad of three</span>
+              <span className={styles.chip}>Dad</span>
               <span className={`${styles.chip} ${styles.chipGreen}`}>
                 Builder
               </span>
@@ -255,9 +255,9 @@ export default function Home() {
               <span className={styles.arborBadge}>The big one</span>
               <h3 className={styles.arborTitle}>Arbor</h3>
               <p className={styles.arborText}>
-                A whole homeschool year, planned around your kid. Shelby and I
-                built it so more families can teach at home without drowning
-                in the work that isn&rsquo;t the kids.
+                A whole homeschool year, planned around your kid. We built it
+                so more families can teach at home without drowning in the
+                work that isn&rsquo;t the kids.
               </p>
               <a
                 href="https://arborhomeschool.com"
@@ -308,25 +308,17 @@ export default function Home() {
             <div className={`${styles.tape} ${styles.tapeRight}`} />
             <h2 className={styles.sectionHeading}>The short story</h2>
             <p className={styles.storyText}>
-              My wife{" "}
-              <a
-                href="https://shelbyhanson.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Shelby
-              </a>{" "}
-              and I are raising three kids at home. We wanted more time with
-              them: a closer family, and a childhood that isn&rsquo;t
-              swallowed by school. Homeschooling was the way. The planning,
-              the lessons, and the records were the wall.
+              I think the best thing a family can have is time together: a
+              close home, and a childhood that isn&rsquo;t swallowed by
+              school. Homeschooling gives families that time. The planning,
+              the lessons, and the records are the wall.
             </p>
             <p className={styles.storyText}>
-              So we built Arbor together. It carries those hard parts so
+              That&rsquo;s why we built Arbor. It carries those hard parts so
               parents can stay at the table with their kids. That&rsquo;s the
-              work that matters most to me right now: helping more people
-              raise their children well, build a strong family, and actually
-              have the hours to spend with them.
+              work that matters most to me right now: helping families raise
+              their children well, build a strong home, and actually have the
+              hours to spend with each other.
             </p>
             <p className={styles.signature}>&mdash; Nate</p>
           </div>
