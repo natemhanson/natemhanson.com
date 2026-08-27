@@ -271,8 +271,8 @@ export default function Home() {
       </main>
       <footer className={styles.footer}>
         <p>
-          <AmericanFlag />
           <span>&copy; {new Date().getFullYear()} Nate Hanson</span>
+          <AmericanFlag />
         </p>
       </footer>
     </>
