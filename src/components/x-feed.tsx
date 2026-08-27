@@ -38,9 +38,9 @@ export async function XFeed() {
 
   return (
     <section id="posts" className={styles.section} aria-labelledby="posts-heading">
-      <p className={styles.sectionLabel} id="posts-heading">
+      <h2 className={styles.heading} id="posts-heading">
         On X
-      </p>
+      </h2>
       <p className={styles.intro}>
         This is pretty much the only place I post. Recent notes from{" "}
         <a href={X_PROFILE_URL} target="_blank" rel="noreferrer">
@@ -79,7 +79,7 @@ export async function XFeed() {
 export function XFeedSkeleton() {
   return (
     <section id="posts" className={styles.section} aria-busy="true" aria-label="On X">
-      <p className={styles.sectionLabel}>On X</p>
+      <h2 className={styles.heading}>On X</h2>
       <p className={styles.intro}>Loading recent posts…</p>
       <div className={styles.skeletonList}>
         <div className={styles.skeleton} />

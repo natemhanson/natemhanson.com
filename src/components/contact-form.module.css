@@ -2,9 +2,9 @@
   display: grid;
   gap: 16px;
   padding: 28px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 24px;
   background: var(--card);
+  box-shadow: 0 12px 28px var(--shadow-soft);
 }
 
 .row {
@@ -29,8 +29,8 @@
 .field input,
 .field textarea {
   width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
   background: var(--background);
   padding: 13px 14px;
   color: var(--foreground);

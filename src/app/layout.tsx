@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Newsreader, DM_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Karla } from "next/font/google";
 import Script from "next/script";
 import { AppearanceControls } from "@/components/appearance-controls";
 import { AmbientPlay } from "@/components/ambient-play";
 import "./globals.css";
 
-const newsreader = Newsreader({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const karla = Karla({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -61,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${newsreader.variable} ${dmSans.variable}`}>
+      <body className={`${bricolage.variable} ${karla.variable}`}>
         <Script
           id="appearance-boot"
           strategy="beforeInteractive"
