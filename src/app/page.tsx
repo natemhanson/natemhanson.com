@@ -306,6 +306,18 @@ export default function Home() {
                 Conversations about the evidence for Christianity.
               </p>
             </a>
+            <a
+              href="https://faithpods.com"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.smallCard}
+            >
+              <h3 className={styles.smallCardTitle}>FaithPods</h3>
+              <p className={styles.smallCardText}>
+                An agency that grows Christian voices by landing them
+                interviews on podcasts and in publications.
+              </p>
+            </a>
           </div>
         </section>
 
@@ -395,24 +407,8 @@ export default function Home() {
             <li className={styles.alongCard}>
               <p className={styles.alongTitle}>Podcasts</p>
               <p className={styles.alongText}>
-                I started a show,{" "}
-                <a
-                  href="https://faithlabshow.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Faith Lab
-                </a>
-                , and run{" "}
-                <a
-                  href="https://faithpods.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  FaithPods
-                </a>
-                , an agency that helps Christian voices grow their reach by
-                landing them interviews on podcasts and in publications.
+                I started a show years ago and have been making podcasts
+                ever since.
               </p>
             </li>
           </ul>
