@@ -255,9 +255,16 @@ export default function Home() {
               <span className={styles.arborBadge}>The big one</span>
               <h3 className={styles.arborTitle}>Arbor</h3>
               <p className={styles.arborText}>
-                A whole homeschool year, planned around your kid. We built it
-                so more families can teach at home without drowning in the
-                work that isn&rsquo;t the kids.
+                A whole homeschool year, planned around your kid. My wife{" "}
+                <a
+                  href="https://shelbyhanson.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Shelby
+                </a>{" "}
+                and I built it together, so more families can teach at home
+                without drowning in the work that isn&rsquo;t the kids.
               </p>
               <a
                 href="https://arborhomeschool.com"
