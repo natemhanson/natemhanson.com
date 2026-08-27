@@ -395,16 +395,15 @@ export default function Home() {
             <li className={styles.alongCard}>
               <p className={styles.alongTitle}>Podcasts</p>
               <p className={styles.alongText}>
-                I started a show and a podcasting network. That work
-                continues in{" "}
+                I started a show,{" "}
                 <a
                   href="https://faithlabshow.com"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Faith Lab
-                </a>{" "}
-                and{" "}
+                </a>
+                , and run{" "}
                 <a
                   href="https://faithpods.com"
                   target="_blank"
@@ -412,7 +411,8 @@ export default function Home() {
                 >
                   FaithPods
                 </a>
-                .
+                , an agency that helps Christian voices grow their reach by
+                landing them interviews on podcasts and in publications.
               </p>
             </li>
           </ul>
