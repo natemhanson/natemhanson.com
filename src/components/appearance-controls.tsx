@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import {
   THEME_KEY,
   applyAppearance,
@@ -28,12 +28,26 @@ function getServerTheme(): ThemeMode {
   return "light";
 }
 
-function SettingsIcon() {
+function MoonIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.8" />
       <path
-        d="M12 3.2v1.8M12 19v1.8M4.9 6.4l1.3 1.3M17.8 16.3l1.3 1.3M3.2 12h1.8M19 12h1.8M4.9 17.6l1.3-1.3M17.8 7.7l1.3-1.3"
+        d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function SunIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+      <path
+        d="M12 2.6v2.1M12 19.3v2.1M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"
         stroke="currentColor"
         strokeWidth="1.8"
         strokeLinecap="round"
@@ -44,69 +58,27 @@ function SettingsIcon() {
 
 export function AppearanceControls() {
   const theme = useSyncExternalStore(subscribe, getThemeSnapshot, getServerTheme);
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const menuId = useId();
-
-  useEffect(() => {
-    if (!open) return;
-
-    function onPointerDown(event: PointerEvent) {
-      const root = rootRef.current;
-      if (!root) return;
-      if (event.target instanceof Node && !root.contains(event.target)) {
-        setOpen(false);
-      }
-    }
-
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
-    }
-
-    window.addEventListener("pointerdown", onPointerDown);
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      window.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [open]);
+  const isDark = theme === "dark";
 
   function toggleTheme() {
-    const next: ThemeMode = theme === "dark" ? "light" : "dark";
+    const next: ThemeMode = isDark ? "light" : "dark";
     window.localStorage.setItem(THEME_KEY, next);
     applyAppearance(next);
     emit();
   }
 
   return (
-    <div className={styles.controls} ref={rootRef}>
+    <div className={styles.controls}>
       <button
         type="button"
         className={styles.trigger}
-        aria-label="Appearance settings"
-        aria-haspopup="true"
-        aria-expanded={open}
-        aria-controls={menuId}
-        title="Appearance"
-        onClick={() => setOpen((value) => !value)}
+        aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        aria-pressed={isDark}
+        title={isDark ? "Light mode" : "Dark mode"}
+        onClick={toggleTheme}
       >
-        <SettingsIcon />
+        {isDark ? <SunIcon /> : <MoonIcon />}
       </button>
-
-      {open ? (
-        <div className={styles.menu} id={menuId} role="menu" aria-label="Appearance">
-          <button
-            type="button"
-            className={styles.item}
-            role="menuitemcheckbox"
-            aria-checked={theme === "dark"}
-            onClick={toggleTheme}
-          >
-            <span>Dark mode</span>
-            <span className={styles.switch} data-on={theme === "dark" ? "true" : "false"} />
-          </button>
-        </div>
-      ) : null}
     </div>
   );
 }

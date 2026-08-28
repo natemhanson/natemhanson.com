@@ -24,11 +24,6 @@
     color 0.2s ease;
 }
 
-.trigger[aria-expanded="true"] {
-  color: var(--accent);
-  background: var(--card);
-}
-
 .trigger:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -38,83 +33,10 @@
   display: block;
 }
 
-.menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  min-width: 210px;
-  padding: 6px;
-  border: 1px solid var(--controls-border);
-  border-radius: 14px;
-  background: var(--controls-bg);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 12px 32px var(--shadow-soft);
-  display: grid;
-  gap: 2px;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  min-height: 44px;
-  padding: 0 12px;
-  border: 0;
-  border-radius: 10px;
-  background: transparent;
-  color: var(--foreground);
-  font: inherit;
-  font-size: 0.92rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-align: left;
-}
-
-.item:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-}
-
-.switch {
-  position: relative;
-  width: 36px;
-  height: 22px;
-  flex-shrink: 0;
-  border-radius: 999px;
-  background: var(--border);
-  transition: background 0.2s ease;
-}
-
-.switch::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: #f7f3ea;
-  box-shadow: 0 1px 2px var(--shadow-soft);
-  transition: transform 0.2s ease;
-}
-
-.switch[data-on="true"] {
-  background: var(--accent);
-}
-
-.switch[data-on="true"]::after {
-  transform: translateX(14px);
-}
-
 @media (hover: hover) and (pointer: fine) {
   .trigger:hover {
-    color: var(--foreground);
-  }
-
-  .item:hover {
-    background: color-mix(in srgb, var(--card) 80%, transparent);
+    color: var(--accent);
+    background: var(--card);
   }
 }
 
@@ -127,9 +49,5 @@
   .trigger {
     width: 44px;
     height: 44px;
-  }
-
-  .menu {
-    min-width: 220px;
   }
 }
