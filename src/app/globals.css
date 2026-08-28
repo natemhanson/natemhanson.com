@@ -6,20 +6,20 @@
   --foreground: #3b2e20;
   --muted: #8a7660;
   --muted-ink: #5b4b38;
-  --accent: #e4643b;
-  --accent-hover: #c9502e;
-  --accent-soft: rgba(228, 100, 59, 0.35);
-  --accent-ring: rgba(228, 100, 59, 0.18);
+  --accent: #2b6cb0;
+  --accent-hover: #1e4e8c;
+  --accent-soft: rgba(43, 108, 176, 0.4);
+  --accent-ring: rgba(43, 108, 176, 0.2);
   --accent-on: #fff7ea;
   --card: #fffdf8;
   --border: #ebdcc0;
   --border-strong: #d3be9d;
-  --link: #c9502e;
+  --link: #2b6cb0;
   --shadow: rgba(59, 46, 32, 0.14);
   --shadow-soft: rgba(59, 46, 32, 0.08);
   --shadow-faint: rgba(59, 46, 32, 0.04);
-  --danger: #c53030;
-  --success: #2f855a;
+  --danger: #9b2c2c;
+  --success: #b7791f;
   --controls-bg: rgba(255, 247, 234, 0.88);
   --controls-border: rgba(211, 190, 157, 0.7);
   --butter: #ffe9be;
@@ -41,20 +41,20 @@ html[data-theme="dark"] {
   --foreground: #f3e7d3;
   --muted: #a8937a;
   --muted-ink: #cdbaa1;
-  --accent: #f08159;
-  --accent-hover: #ff9b76;
-  --accent-soft: rgba(240, 129, 89, 0.4);
-  --accent-ring: rgba(240, 129, 89, 0.22);
-  --accent-on: #241a12;
+  --accent: #63b3ed;
+  --accent-hover: #90cdf4;
+  --accent-soft: rgba(99, 179, 237, 0.45);
+  --accent-ring: rgba(99, 179, 237, 0.24);
+  --accent-on: #0f172a;
   --card: #2b1f15;
   --border: #453322;
   --border-strong: #665038;
-  --link: #f08159;
+  --link: #63b3ed;
   --shadow: rgba(0, 0, 0, 0.35);
   --shadow-soft: rgba(0, 0, 0, 0.25);
   --shadow-faint: rgba(0, 0, 0, 0.18);
-  --danger: #f87171;
-  --success: #6ee7a0;
+  --danger: #fc8181;
+  --success: #f6ad55;
   --controls-bg: rgba(43, 31, 21, 0.9);
   --controls-border: rgba(102, 80, 56, 0.7);
   --butter: #342718;
@@ -66,29 +66,6 @@ html[data-theme="dark"] {
   --green-soft: #28301e;
   --green-border: #465438;
   --green-ink: #b9cba2;
-}
-
-/* Blue + amber: readable for common red-green color vision differences */
-html[data-colorblind="on"] {
-  --accent: #2b6cb0;
-  --accent-hover: #1e4e8c;
-  --accent-soft: rgba(43, 108, 176, 0.4);
-  --accent-ring: rgba(43, 108, 176, 0.2);
-  --accent-on: #fff7ea;
-  --link: #2b6cb0;
-  --success: #b7791f;
-  --danger: #9b2c2c;
-}
-
-html[data-theme="dark"][data-colorblind="on"] {
-  --accent: #63b3ed;
-  --accent-hover: #90cdf4;
-  --accent-soft: rgba(99, 179, 237, 0.45);
-  --accent-ring: rgba(99, 179, 237, 0.24);
-  --accent-on: #0f172a;
-  --link: #63b3ed;
-  --success: #f6ad55;
-  --danger: #fc8181;
 }
 
 html,

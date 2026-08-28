@@ -39,17 +39,8 @@ export const metadata: Metadata = {
 const appearanceBootScript = `
 (() => {
   try {
-    const stored = localStorage.getItem("nate-theme");
-    const theme =
-      stored === "light" || stored === "dark"
-        ? stored
-        : window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-    document.documentElement.dataset.theme = theme;
-    if (localStorage.getItem("nate-colorblind") === "on") {
-      document.documentElement.dataset.colorblind = "on";
-    }
+    document.documentElement.dataset.theme =
+      localStorage.getItem("nate-theme") === "dark" ? "dark" : "light";
   } catch (_) {}
 })();
 `;

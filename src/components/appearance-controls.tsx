@@ -3,10 +3,8 @@
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import {
   THEME_KEY,
-  COLORBLIND_KEY,
   applyAppearance,
   getPreferredTheme,
-  getStoredColorblind,
   type ThemeMode,
 } from "@/lib/appearance";
 import styles from "./appearance-controls.module.css";
@@ -26,16 +24,8 @@ function getThemeSnapshot(): ThemeMode {
   return getPreferredTheme();
 }
 
-function getColorblindSnapshot(): boolean {
-  return getStoredColorblind();
-}
-
 function getServerTheme(): ThemeMode {
   return "light";
-}
-
-function getServerColorblind(): boolean {
-  return false;
 }
 
 function SettingsIcon() {
@@ -54,11 +44,6 @@ function SettingsIcon() {
 
 export function AppearanceControls() {
   const theme = useSyncExternalStore(subscribe, getThemeSnapshot, getServerTheme);
-  const colorblind = useSyncExternalStore(
-    subscribe,
-    getColorblindSnapshot,
-    getServerColorblind,
-  );
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
@@ -89,14 +74,7 @@ export function AppearanceControls() {
   function toggleTheme() {
     const next: ThemeMode = theme === "dark" ? "light" : "dark";
     window.localStorage.setItem(THEME_KEY, next);
-    applyAppearance(next, colorblind);
-    emit();
-  }
-
-  function toggleColorblind() {
-    const next = !colorblind;
-    window.localStorage.setItem(COLORBLIND_KEY, next ? "on" : "off");
-    applyAppearance(theme, next);
+    applyAppearance(next);
     emit();
   }
 
@@ -126,16 +104,6 @@ export function AppearanceControls() {
           >
             <span>Dark mode</span>
             <span className={styles.switch} data-on={theme === "dark" ? "true" : "false"} />
-          </button>
-          <button
-            type="button"
-            className={styles.item}
-            role="menuitemcheckbox"
-            aria-checked={colorblind}
-            onClick={toggleColorblind}
-          >
-            <span>Colorblind mode</span>
-            <span className={styles.switch} data-on={colorblind ? "true" : "false"} />
           </button>
         </div>
       ) : null}
