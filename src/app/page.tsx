@@ -156,7 +156,7 @@ function AmericanFlag() {
 
 const TICKER_ITEMS = [
   "Co-founder of Arbor",
-  "Helping families homeschool",
+  "Helps families homeschool",
   "Helps build Buffer",
   "Hosts Faith Lab",
 ];
