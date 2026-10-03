@@ -1,47 +1,47 @@
 :root {
-  --background: #e8edf4;
-  --foreground: #0f172a;
-  --muted: #475569;
-  --muted-ink: #334155;
-  --accent: #2558e6;
-  --accent-hover: #1d47c2;
-  --accent-ring: rgba(37, 88, 230, 0.18);
+  --background: #fbfbf6;
+  --grid: rgba(36, 80, 200, 0.07);
+  --foreground: #23262d;
+  --muted: #50545c;
+  --muted-ink: #3a3e46;
+  --accent: #2450c8;
   --accent-on: #ffffff;
+  --highlight: #ffe45c;
   --card: #ffffff;
-  --card-soft: #f4f7fb;
-  --chip: #f1f5f9;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --link: #0f172a;
-  --shadow: rgba(15, 23, 42, 0.08);
-  --shadow-soft: rgba(15, 23, 42, 0.06);
+  --card-soft: rgba(255, 255, 255, 0.7);
+  --line: #23262d;
+  --line-shadow: #23262d;
+  --border: #dde1ea;
+  --border-strong: #b8becb;
+  --clip: #6b7079;
+  --link: #23262d;
+  --shadow: rgba(35, 38, 45, 0.14);
   --danger: #9b2c2c;
   --success: #b7791f;
-  --controls-bg: rgba(255, 255, 255, 0.86);
-  --controls-border: rgba(203, 213, 225, 0.8);
 }
 
+/* Dark notebook: light ink on a dark page. Translucent yellow turns olive on
+   dark, so the highlighter switches to a soft blue that keeps text readable. */
 html[data-theme="dark"] {
-  --background: #0b1220;
-  --foreground: #e7ecf3;
-  --muted: #9aa6b8;
-  --muted-ink: #c3ccd9;
-  --accent: #7aa2ff;
-  --accent-hover: #9bb8ff;
-  --accent-ring: rgba(122, 162, 255, 0.24);
-  --accent-on: #0b1220;
-  --card: #121a2b;
-  --card-soft: #172238;
-  --chip: #1a2540;
-  --border: #24314a;
-  --border-strong: #34445f;
-  --link: #e7ecf3;
-  --shadow: rgba(0, 0, 0, 0.4);
-  --shadow-soft: rgba(0, 0, 0, 0.3);
+  --background: #14171d;
+  --grid: rgba(127, 163, 255, 0.07);
+  --foreground: #e8ebf0;
+  --muted: #a3aab6;
+  --muted-ink: #c9cfd8;
+  --accent: #7fa3ff;
+  --accent-on: #14171d;
+  --highlight: rgba(127, 163, 255, 0.3);
+  --card: #1c2028;
+  --card-soft: rgba(28, 32, 40, 0.7);
+  --line: #d7dce5;
+  --line-shadow: rgba(215, 220, 229, 0.22);
+  --border: #2c323d;
+  --border-strong: #4a5262;
+  --clip: #a3aab6;
+  --link: #e8ebf0;
+  --shadow: rgba(0, 0, 0, 0.45);
   --danger: #fc8181;
   --success: #f6ad55;
-  --controls-bg: rgba(18, 26, 43, 0.9);
-  --controls-border: rgba(52, 68, 95, 0.8);
 }
 
 html,
@@ -53,7 +53,11 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
   font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

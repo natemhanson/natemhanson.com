@@ -1,61 +1,58 @@
 .form {
   display: grid;
-  gap: 16px;
+  gap: 22px;
 }
 
 .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 22px;
 }
 
 .field {
   display: grid;
-  gap: 6px;
+  gap: 2px;
 }
 
 .field span {
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-family: var(--font-hand), cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
+/* Inputs are lines on the page, not boxes. */
 .field input,
 .field textarea {
   width: 100%;
-  border: 1px solid var(--border-strong);
-  border-radius: 12px;
-  background: var(--card-soft);
-  padding: 13px 14px;
+  border: none;
+  border-bottom: 2px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  padding: 10px 2px;
   color: var(--foreground);
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-.field input::placeholder,
-.field textarea::placeholder {
-  color: var(--border-strong);
-}
-
 .field textarea {
   resize: vertical;
-  min-height: 160px;
-}
-
-.botcheck {
-  display: none;
+  min-height: 120px;
+  line-height: 1.6;
 }
 
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-ring);
+  border-bottom-color: var(--accent);
+  box-shadow: 0 2px 0 var(--accent);
+}
+
+.botcheck {
+  display: none;
 }
 
 .actions {
@@ -65,23 +62,20 @@
 
 .actions button {
   width: fit-content;
-  min-height: 44px;
-  padding: 0 24px;
-  border: 0;
-  border-radius: 999px;
+  min-height: 54px;
+  padding: 0 28px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
   background: var(--accent);
+  box-shadow: 4px 4px 0 var(--line-shadow);
   color: var(--accent-on);
   font: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 800;
   cursor: pointer;
   transition:
-    background 0.2s ease,
-    transform 0.15s ease;
-}
-
-.actions button:hover {
-  background: var(--accent-hover);
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .actions button:focus-visible {
@@ -90,7 +84,8 @@
 }
 
 .actions button:active {
-  transform: scale(0.98);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--line-shadow);
 }
 
 .actions button:disabled {
@@ -100,7 +95,7 @@
 
 .error,
 .success {
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
 }
 
 .error {
@@ -109,6 +104,13 @@
 
 .success {
   color: var(--success);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .actions button:hover:not(:disabled) {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 var(--line-shadow);
+  }
 }
 
 @media (max-width: 640px) {

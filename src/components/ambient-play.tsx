@@ -26,8 +26,8 @@ const DESKTOP_COUNT = 28;
 const MOBILE_COUNT = 18;
 
 /* Game palette is fixed and independent of the site accent. */
-const PLAY_RGB_LIGHT = "100, 116, 139";
-const PLAY_RGB_DARK = "148, 163, 184";
+const PLAY_RGB_LIGHT = "36, 80, 200";
+const PLAY_RGB_DARK = "127, 163, 255";
 
 function createMotes(width: number, height: number, count: number): Mote[] {
   return Array.from({ length: count }, () => ({

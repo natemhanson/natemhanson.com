@@ -1,7 +1,4 @@
-import type { ReactNode } from "react";
-import styles from "./site-shell.module.css";
-
-function AmericanFlag() {
+export function AmericanFlag({ className }: { className?: string }) {
   const cantonWidth = 7.6;
   const cantonHeight = (7 * 10) / 13;
   const stars: { cx: number; cy: number }[] = [];
@@ -17,7 +14,7 @@ function AmericanFlag() {
 
   return (
     <svg
-      className={styles.flag}
+      className={className}
       viewBox="0 0 19 10"
       width="18"
       height="10"
@@ -45,22 +42,5 @@ function AmericanFlag() {
         />
       ))}
     </svg>
-  );
-}
-
-// The whole site is one card on a quiet ground.
-export function SiteShell({ children }: { children: ReactNode }) {
-  return (
-    <div className={styles.shell}>
-      <main className={styles.card}>
-        {children}
-        <footer className={styles.footer}>
-          <p className={styles.copyright}>
-            <span>&copy; {new Date().getFullYear()} Nate Hanson</span>
-            <AmericanFlag />
-          </p>
-        </footer>
-      </main>
-    </div>
   );
 }

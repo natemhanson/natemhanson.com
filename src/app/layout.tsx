@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Familjen_Grotesk } from "next/font/google";
+import { Caveat, Hanken_Grotesk } from "next/font/google";
 import Script from "next/script";
-import { AppearanceControls } from "@/components/appearance-controls";
 import { AmbientPlay } from "@/components/ambient-play";
 import { X_HANDLE, X_PROFILE_URL } from "@/lib/x-posts";
 import "./globals.css";
 
-const familjen = Familjen_Grotesk({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-hand",
+  display: "swap",
+});
+
 const DESCRIPTION =
-  "Dad, builder, and co-founder of Arbor. I started Arbor to take the hard parts of homeschooling off parents’ plates, so more families can raise their kids together.";
+  "Dad and builder. Right now I’m building Arbor, helping build Buffer, and hosting Faith Lab.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://natemhanson.com"),
@@ -31,8 +36,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nate Hanson",
-    description:
-      "Dad, builder, and co-founder of Arbor, helping more families raise their kids together.",
+    description: DESCRIPTION,
     url: "https://natemhanson.com",
     siteName: "Nate Hanson",
     locale: "en_US",
@@ -44,8 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Nate Hanson",
-    description:
-      "Dad, builder, and co-founder of Arbor, helping more families raise their kids together.",
+    description: DESCRIPTION,
     creator: `@${X_HANDLE}`,
     site: `@${X_HANDLE}`,
   },
@@ -96,7 +99,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={familjen.variable}>
+      <body className={`${hanken.variable} ${caveat.variable}`}>
         <Script
           id="appearance-boot"
           strategy="beforeInteractive"
@@ -107,7 +110,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         <AmbientPlay />
-        <AppearanceControls />
         <div className="site">{children}</div>
       </body>
     </html>

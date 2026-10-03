@@ -85,25 +85,25 @@ export function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label className={styles.field}>
-          <span>Name</span>
+          <span>your name</span>
           <input name="name" type="text" required />
         </label>
         <label className={styles.field}>
-          <span>Email</span>
+          <span>your email</span>
           <input name="email" type="email" required />
         </label>
       </div>
 
       <label className={styles.field}>
-        <span>Message</span>
-        <textarea name="message" rows={7} required />
+        <span>message</span>
+        <textarea name="message" rows={4} required />
       </label>
 
       <input className={styles.botcheck} name="botcheck" type="checkbox" tabIndex={-1} autoComplete="off" />
 
       <div className={styles.actions}>
         <button type="submit" disabled={isPending}>
-          {isPending ? "Sending..." : "Send Message"}
+          {isPending ? "Sending..." : "Send message"}
         </button>
         {state.error ? <p className={styles.error}>{state.error}</p> : null}
         {state.success ? <p className={styles.success}>{state.success}</p> : null}
