@@ -24,10 +24,7 @@
 
 .footer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px 20px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
   font-size: 0.875rem;
@@ -47,28 +44,6 @@
   flex-shrink: 0;
   border-radius: 1px;
   box-shadow: 0 0 0 1px var(--border);
-}
-
-.footerNav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-}
-
-.footerNav a {
-  color: var(--muted);
-}
-
-.footerNav a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .footerNav a:hover {
-    color: var(--foreground);
-  }
 }
 
 /* Clear the fixed theme toggle in the top-right corner on phones. */

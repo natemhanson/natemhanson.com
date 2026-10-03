@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import styles from "./site-shell.module.css";
 
@@ -49,8 +48,7 @@ function AmericanFlag() {
   );
 }
 
-// The whole site is one card on a quiet ground: home, the story, and contact
-// all share this frame and footer.
+// The whole site is one card on a quiet ground.
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
@@ -61,11 +59,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <span>&copy; {new Date().getFullYear()} Nate Hanson</span>
             <AmericanFlag />
           </p>
-          <nav className={styles.footerNav} aria-label="Site">
-            <Link href="/">Home</Link>
-            <Link href="/story">The short story</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
         </footer>
       </main>
     </div>
