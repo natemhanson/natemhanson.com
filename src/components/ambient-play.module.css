@@ -14,7 +14,7 @@
   bottom: 18px;
   z-index: 30;
   transform: translateX(-50%);
-  color: rgba(110, 98, 86, 0.7);
+  color: rgba(71, 85, 105, 0.75);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   opacity: 0;
@@ -23,7 +23,7 @@
 }
 
 :global(html[data-theme="dark"]) .whisper {
-  color: rgba(168, 154, 136, 0.7);
+  color: rgba(154, 166, 184, 0.75);
 }
 
 .whisperVisible {

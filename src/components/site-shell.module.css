@@ -1,0 +1,84 @@
+.shell {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 48px);
+}
+
+.card {
+  width: 100%;
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow:
+    0 1px 2px var(--shadow-soft),
+    0 24px 48px var(--shadow);
+  animation: fadeUp 0.6s ease both;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.copyright {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag {
+  display: block;
+  width: 18px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.footerNav a {
+  color: var(--muted);
+}
+
+.footerNav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footerNav a:hover {
+    color: var(--foreground);
+  }
+}
+
+/* Clear the fixed theme toggle in the top-right corner on phones. */
+@media (max-width: 640px) {
+  .shell {
+    align-items: flex-start;
+    padding: 68px 16px 24px;
+  }
+
+  .card {
+    border-radius: 22px;
+  }
+}

@@ -1,10 +1,6 @@
 .form {
   display: grid;
   gap: 16px;
-  padding: 28px;
-  border-radius: 24px;
-  background: var(--card);
-  box-shadow: 0 12px 28px var(--shadow-soft);
 }
 
 .row {
@@ -29,9 +25,9 @@
 .field input,
 .field textarea {
   width: 100%;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border-strong);
   border-radius: 12px;
-  background: var(--background);
+  background: var(--card-soft);
   padding: 13px 14px;
   color: var(--foreground);
   font: inherit;
@@ -118,9 +114,5 @@
 @media (max-width: 640px) {
   .row {
     grid-template-columns: 1fr;
-  }
-
-  .form {
-    padding: 20px;
   }
 }

@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Karla } from "next/font/google";
+import { Familjen_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { AppearanceControls } from "@/components/appearance-controls";
 import { AmbientPlay } from "@/components/ambient-play";
 import { X_HANDLE, X_PROFILE_URL } from "@/lib/x-posts";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const karla = Karla({
+const familjen = Familjen_Grotesk({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -102,7 +96,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${bricolage.variable} ${karla.variable}`}>
+      <body className={familjen.variable}>
         <Script
           id="appearance-boot"
           strategy="beforeInteractive"

@@ -1,0 +1,75 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.back svg {
+  transition: transform 0.2s ease;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 680px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.lead {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--muted-ink);
+}
+
+.signature {
+  font-weight: 600;
+}
+
+/* Contact: the copy beside the form, stacking on phones. */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 64px;
+}
+
+.split > .content {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.formColumn {
+  flex: 1.3 1 420px;
+  min-width: 0;
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back:hover {
+    color: var(--foreground);
+  }
+
+  .back:hover svg {
+    transform: translateX(-2px);
+  }
+}
